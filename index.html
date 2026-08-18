@@ -347,6 +347,12 @@
       margin-bottom: 10px;
     }
 
+    /* Estilo para destacar la palabra Owner en rojo */
+    .owner-tag {
+      color: #ff3b30;
+      font-weight: bold;
+    }
+
     .table-responsive {
       width: 100%;
       overflow-x: auto;
@@ -461,12 +467,6 @@
       font-size: 0.9rem;
     }
 
-    .coming-soon {
-      font-size: 1.8rem;
-      color: #60a5fa;
-      margin-top: 50px;
-    }
-
     @media (max-width: 600px) {
       .auth-container {
         padding: 24px 18px;
@@ -540,7 +540,6 @@
       </div>
 
       <a href="#" onclick="showSection('plantillas')">Plantillas</a>
-      <a href="#" onclick="showSection('tickets')">Guía de Tickets</a>
       <a href="#" onclick="showSection('situaciones')">Situaciones</a>
     </div>
 
@@ -551,7 +550,7 @@
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
         </p>
       </div>
     </div>
@@ -670,23 +669,23 @@ Pruebas:</div>
       </div>
     </div>
 
-    <!-- NUEVA SECCIÓN: GUÍA DE TICKETS -->
-    <div id="tickets" class="section">
+    <!-- SECCIÓN DE SITUACIONES (REEMPLAZA LA GUÍA DE TICKETS) -->
+    <div id="situaciones" class="section">
       <div class="ticket-block">
-        <h2 class="sub-title">Guía de Atención de Tickets (Discord)</h2>
+        <h2 class="sub-title">Situaciones y Manejo de Casos</h2>
         <p class="info-text">
-          Sigue esta guía paso a paso para dar un trato respetuoso, rápido y eficiente a todos los miembros de la comunidad que abren soporte.
+          A continuación se detallan los procedimientos para resolver las distintas situaciones que ocurren en la comunidad.
         </p>
 
-        <h3 style="color: #93c5fd; margin: 20px 0 10px; font-size: 1.1rem;">📌 Flujo de Atención General</h3>
+        <h3 style="color: #93c5fd; margin: 20px 0 10px; font-size: 1.1rem;">📌 Procedimiento General de Atención</h3>
         <ol class="step-list">
           <li><strong>Saludador Inicial:</strong> Envía un saludo amable usando el formato correspondiente (por ejemplo: <code>¡Hola @Usuario! Bienvenido al soporte de SirenMC. ¿En qué podemos ayudarte hoy?</code>).</li>
-          <li><strong>Pedir la Plantilla:</strong> Si el usuario no ha puesto sus datos, reenvíale la plantilla de tickets correspondiente.</li>
+          <li><strong>Pedir la Plantilla:</strong> Si el usuario no ha puesto sus datos, reenvíale la plantilla correspondiente.</li>
           <li><strong>Evaluar Pruebas:</strong> Verifica que los videos o capturas no estén editados, recortados o borrosos.</li>
-          <li><strong>Cierre del Ticket:</strong> Una vez resuelta la duda o aplicada la sanción, indícale al usuario si requiere algo más y procede a cerrar el ticket con el comando de soporte.</li>
+          <li><strong>Cierre del Caso:</strong> Una vez resuelta la duda o aplicada la sanción, indícale al usuario si requiere algo más y procede a cerrar el caso.</li>
         </ol>
 
-        <h3 style="color: #93c5fd; margin: 28px 0 12px; font-size: 1.1rem;">📂 Tipos de Tickets y Procedimiento</h3>
+        <h3 style="color: #93c5fd; margin: 28px 0 12px; font-size: 1.1rem;">📂 Tipos de Situaciones</h3>
         
         <div class="ticket-card-grid">
           <div class="ticket-card">
@@ -703,7 +702,7 @@ Pruebas:</div>
             <ul>
               <li><strong>Solicitar:</strong> Nick del sancionado y motivo exacto de la apelación.</li>
               <li><strong>Verificación:</strong> Revisa el log o el staff que aplicó la sanción.</li>
-              <li><strong>Regra:</strong> Si admite el error y es primera vez, consultar con un Admin/Owner.</li>
+              <li><strong>Regra:</strong> Si admite el error y es primera vez, consultar únicamente con <span class="owner-tag">Owner</span>.</li>
             </ul>
           </div>
 
@@ -712,7 +711,7 @@ Pruebas:</div>
             <ul>
               <li><strong>Solicitar:</strong> Comprobante de pago (Tebex ID / Transacción) y Nick de Minecraft.</li>
               <li><strong>Atención:</strong> <strong>NO</strong> pidas contraseñas ni datos sensibles.</li>
-              <li><strong>Acción:</strong> Escalar inmediatamente etiquetando al rol de <strong>Admin/Owner</strong>.</li>
+              <li><strong>Acción:</strong> Mencionar y escalar únicamente etiquetando al <span class="owner-tag">Owner</span>.</li>
             </ul>
           </div>
 
@@ -720,24 +719,21 @@ Pruebas:</div>
             <h4>🐛 Reporte de Bugs</h4>
             <ul>
               <li><strong>Solicitar:</strong> Explicación paso a paso de cómo se reproduce el bug y captura/video.</li>
-              <li><strong>Recompensa:</strong> Si es un bug crítico, notificar a administración para evaluar recompensa al usuario.</li>
+              <li><strong>Recompensa:</strong> Si es un bug crítico, notificar al <span class="owner-tag">Owner</span> para evaluar recompensa al usuario.</li>
             </ul>
           </div>
         </div>
 
         <div style="margin-top: 24px; padding: 14px; background: rgba(255, 59, 48, 0.1); border-left: 4px solid #ff3b30; border-radius: 4px;">
-          <p style="color: #ff3b30; font-weight: 600; font-size: 0.95rem;">⚠️ Reglas de Oro para el Staff en Tickets:</p>
+          <p style="color: #ff3b30; font-weight: 600; font-size: 0.95rem;">⚠️ Reglas de Oro para el Staff:</p>
           <p style="color: #d0e1fd; font-size: 0.9rem; margin-top: 4px;">
             1. Mantén la calma en todo momento, incluso si el usuario es grosero (si agrede, se le aplica mute según corresponda).<br>
-            2. Nunca elimines un ticket sin haber dejado constancia/registro si se aplicó alguna sanción.
+            2. Nunca elimines un registro de atención sin haber dejado constancia/registro si se aplicó alguna sanción.
           </p>
         </div>
       </div>
     </div>
 
-    <div id="situaciones" class="section">
-      <div class="coming-soon">Coming Soon</div>
-    </div>
   </div>
 
   <script src="database.js"></script>
@@ -761,7 +757,7 @@ Pruebas:</div>
       const soundIcon = document.getElementById('sound-icon');
       
       if (isMuted) {
-        soundIcon.innerText = '🔇';
+        soundIcon.innerText = '0';
       } else {
         soundIcon.innerText = '🔊';
         playSound('click');
