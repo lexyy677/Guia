@@ -18,7 +18,7 @@
       min-height: 100vh;
     }
 
-    /* Fondo con Banner/Logo gigante detrás del Login */
+    /* Fondo con Banner de Logo detrás del Login */
     .login-wrapper {
       position: relative;
       min-height: 100vh;
@@ -123,6 +123,8 @@
       align-items: center; 
       justify-content: space-between; 
       border-bottom: 1px solid #1e3a8a; 
+      position: relative;
+      z-index: 10;
     }
 
     .menu-btn { 
@@ -225,17 +227,48 @@
     
     .section.active { display: block; }
 
+    /* Sección Bienvenida con Fondo Difuminado Personalizado */
+    #home {
+      position: relative;
+      min-height: calc(100vh - 60px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      overflow: hidden;
+    }
+
+    .bg-welcome {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(11, 19, 41, 0.85), rgba(11, 19, 41, 0.85)), 
+                        url('https://cdn.discordapp.com/attachments/1518081152986906708/1539173607991943168/istockphoto-2158621447-612x612.jpg?ex=6a855aa0&is=6a840920&hm=3260bbe1a04967bff834c9cabb15cc2e195eeb734b44a6e6a61466cf93c6b0f4&');
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      transform: scale(1.08);
+      z-index: 1;
+    }
+
+    .welcome-content {
+      position: relative;
+      z-index: 2;
+    }
+
     .logo-large {
       max-width: 220px;
       width: 100%;
       height: auto;
       margin-bottom: 20px;
       border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
 
     .guide-author {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #93c5fd;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
     .guide-author strong {
@@ -301,7 +334,7 @@
       margin-top: 40px;
     }
 
-    /* Ajustes adicionales para pantallas pequeñas */
+    /* Responsivo */
     @media (max-width: 480px) {
       .auth-container {
         padding: 24px 18px;
@@ -364,10 +397,13 @@
       <a href="#" onclick="showSection('situaciones')">Situaciones</a>
     </div>
 
-    <!-- Bienvenida -->
+    <!-- Bienvenida con fondo difuminado -->
     <div id="home" class="section active">
-      <img src="https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048" alt="Logo SirenMC" class="logo-large">
-      <p class="guide-author">Esta guía es hecha por <strong>Lexyy677</strong> y se irá mejorando al paso del tiempo.</p>
+      <div class="bg-welcome"></div>
+      <div class="welcome-content">
+        <img src="https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048" alt="Logo SirenMC" class="logo-large">
+        <p class="guide-author">Esta guía es hecha por <strong>Lexyy677</strong> y se irá mejorando al paso del tiempo.</p>
+      </div>
     </div>
 
     <!-- Muteos -->
