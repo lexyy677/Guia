@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guía Staff Team - SirenMC</title>
+  
+  <!-- Favicon (Icono de la pestaña) -->
+  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048">
+
   <style>
     * { 
       box-sizing: border-box; 
@@ -386,7 +390,7 @@
       border: 1px solid #1e3a8a;
       border-radius: 8px;
       padding: 16px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       white-space: pre-wrap;
       font-family: monospace;
       color: #93c5fd;
@@ -483,7 +487,7 @@
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
         </p>
       </div>
     </div>
@@ -575,26 +579,37 @@
       <div class="template-block">
         <h2 class="sub-title">Plantillas del Staff</h2>
         <p class="info-text">
-          Utiliza estas plantillas para mantener un formato ordenado al subir reportes o evidencias al equipo de administración.
+          Haz clic en "Copiar Plantilla" para pegar directamente el formato en Discord.
         </p>
 
-        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">1. Reporte de Sanción / Evidencia</h3>
-        <div class="template-box" id="temp-1">**REPORTE DE SANCIÓN**
-• **Nick del Sancionado:** [Nick]
-• **Sanción:** [Mute/Ban]
-• **Duración:** [Tiempo]
-• **Motivo:** [Motivo]
-• **Pruebas/Evidencia:** [Enlace de imagen o video]
-• **Staff Responsable:** [Tu Nick]</div>
-        <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-1', this)">Copiar Plantilla</button>
+        <!-- Plantilla Tickets -->
+        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">Plantilla de Tickets</h3>
+        <div class="template-box" id="temp-tickets">Nick: 
+Pruebas:</div>
+        <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-tickets', this)">Copiar Plantilla</button>
 
-        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">2. Solicitud de Revisión / Screen Share (SS)</h3>
-        <div class="template-box" id="temp-2">**SOLICITUD DE SCREEN SHARE**
-• **Jugador Sospechoso:** [Nick]
-• **Motivo de Sospecha:** [Client/AutoClicker/etc.]
-• **Estado:** [En proceso / Rechazó / Admitió]
-• **Grabación/Captura:** [Link]</div>
-        <button class="copy-btn" onclick="copyText('temp-2', this)">Copiar Plantilla</button>
+        <!-- Plantilla Baneos -->
+        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">Plantilla de Baneos</h3>
+        <div class="template-box" id="temp-baneos">Nick: 
+Motivo: 
+Tiempo: 
+Pruebas:</div>
+        <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-baneos', this)">Copiar Plantilla</button>
+
+        <!-- Plantilla Muteos -->
+        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">Plantilla de Muteos</h3>
+        <div class="template-box" id="temp-muteos">Nick: 
+Motivo: 
+Tiempo: 
+Pruebas:</div>
+        <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-muteos', this)">Copiar Plantilla</button>
+
+        <!-- Plantilla Revives -->
+        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">Plantilla de Revives</h3>
+        <div class="template-box" id="temp-revives">Nick: 
+Motivo: 
+Pruebas:</div>
+        <button class="copy-btn" onclick="copyText('temp-revives', this)">Copiar Plantilla</button>
       </div>
     </div>
 
@@ -651,7 +666,7 @@
 
     function showSection(id) {
       // Oculta todas las secciones
-      const sections = document.querySelectorAll('.section');
+      const sections = document.forEach ? document.querySelectorAll('.section') : [];
       sections.forEach(s => {
         s.classList.remove('active');
         s.style.display = 'none';
