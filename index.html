@@ -256,7 +256,7 @@
     }
 
     /* Tablas y bloques */
-    .sancion-block {
+    .sancion-block, .template-block {
       background: #131f37;
       border-radius: 10px;
       padding: 24px;
@@ -319,7 +319,7 @@
       border-bottom: none;
     }
 
-    /* Estilos del Comando */
+    /* Estilos del Comando / Copiado Rápido */
     .command-footer {
       margin-top: 24px;
       padding-top: 16px;
@@ -332,24 +332,64 @@
       margin-bottom: 8px;
     }
 
-    .command-box {
-      display: inline-block;
+    .copy-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       background: #070d1d;
-      color: #39ff14;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: 600;
-      padding: 10px 16px;
+      padding: 6px 12px;
       border-radius: 6px;
       border: 1px solid rgba(57, 255, 20, 0.3);
       box-shadow: 0 0 8px rgba(57, 255, 20, 0.15);
-      font-size: 0.95rem;
       margin-bottom: 10px;
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .command-box {
+      color: #39ff14;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 600;
+      font-size: 0.95rem;
       word-break: break-all;
+    }
+
+    .copy-btn {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .copy-btn.copied {
+      background: #16a34a;
     }
 
     .command-warning {
       color: #ff3b30;
       font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Plantillas predeterminadas */
+    .template-box {
+      background: #070d1d;
+      border: 1px solid #1e3a8a;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      color: #93c5fd;
       font-size: 0.9rem;
     }
 
@@ -379,6 +419,10 @@
       th, td {
         padding: 8px 10px;
         font-size: 0.82rem;
+      }
+      .copy-container {
+        width: 100%;
+        justify-content: space-between;
       }
     }
   </style>
@@ -427,6 +471,7 @@
         <a href="#" onclick="showSection('baneos')">Baneos</a>
       </div>
 
+      <a href="#" onclick="showSection('plantillas')">Plantillas</a>
       <a href="#" onclick="showSection('situaciones')">Situaciones</a>
     </div>
 
@@ -438,7 +483,7 @@
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
         </p>
       </div>
     </div>
@@ -475,7 +520,10 @@
 
         <div class="command-footer">
           <p class="command-label">Aquí está el comando para mutear:</p>
-          <div class="command-box">/muteip -s [nick] [motivo] [tiempo]</div>
+          <div class="copy-container">
+            <span class="command-box" id="cmd-mute">/muteip -s [nick] [motivo] [tiempo]</span>
+            <button class="copy-btn" onclick="copyText('cmd-mute', this)">Copiar</button>
+          </div>
           <p class="command-warning">Es obligatorio siempre usar el -s</p>
         </div>
       </div>
@@ -513,9 +561,40 @@
 
         <div class="command-footer">
           <p class="command-label">Comando para banear correctamente:</p>
-          <div class="command-box">/banip -s [nick] [motivo] [tiempo]</div>
+          <div class="copy-container">
+            <span class="command-box" id="cmd-ban">/banip -s [nick] [motivo] [tiempo]</span>
+            <button class="copy-btn" onclick="copyText('cmd-ban', this)">Copiar</button>
+          </div>
           <p class="command-warning">es obligatorio usar siempre "-s"</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Plantillas -->
+    <div id="plantillas" class="section">
+      <div class="template-block">
+        <h2 class="sub-title">Plantillas del Staff</h2>
+        <p class="info-text">
+          Utiliza estas plantillas para mantener un formato ordenado al subir reportes o evidencias al equipo de administración.
+        </p>
+
+        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">1. Reporte de Sanción / Evidencia</h3>
+        <div class="template-box" id="temp-1">**REPORTE DE SANCIÓN**
+• **Nick del Sancionado:** [Nick]
+• **Sanción:** [Mute/Ban]
+• **Duración:** [Tiempo]
+• **Motivo:** [Motivo]
+• **Pruebas/Evidencia:** [Enlace de imagen o video]
+• **Staff Responsable:** [Tu Nick]</div>
+        <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-1', this)">Copiar Plantilla</button>
+
+        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">2. Solicitud de Revisión / Screen Share (SS)</h3>
+        <div class="template-box" id="temp-2">**SOLICITUD DE SCREEN SHARE**
+• **Jugador Sospechoso:** [Nick]
+• **Motivo de Sospecha:** [Client/AutoClicker/etc.]
+• **Estado:** [En proceso / Rechazó / Admitió]
+• **Grabación/Captura:** [Link]</div>
+        <button class="copy-btn" onclick="copyText('temp-2', this)">Copiar Plantilla</button>
       </div>
     </div>
 
@@ -588,6 +667,25 @@
       // Cierra la barra lateral y overlay
       document.getElementById('sidebar').classList.remove('active');
       document.querySelector('.overlay').classList.remove('active');
+    }
+
+    // Función para copiado rápido
+    function copyText(elementId, buttonElement) {
+      const element = document.getElementById(elementId);
+      const textToCopy = element.innerText;
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = buttonElement.innerText;
+        buttonElement.innerText = '¡Copiado!';
+        buttonElement.classList.add('copied');
+
+        setTimeout(() => {
+          buttonElement.innerText = originalText;
+          buttonElement.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Error al copiar el texto: ', err);
+      });
     }
   </script>
 </body>
