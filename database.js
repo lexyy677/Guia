@@ -19,5 +19,11 @@ const usersDatabase = [
     Nick: "CarlitosMC",
     Correo: "carlos@sirenmc.net",
     Contrasena: "CarlitosMC"
+  },
+  {
+    Nombre: "Carlos",
+    Nick: "CarlitosMC",
+    Correo: "carlos@sirenmc.net",
+    Contrasena: "CarlitosMC"
   }
 ];
