@@ -225,7 +225,7 @@
       text-align: center; 
     } 
     
-    .section.active { display: block; }
+    .section.active { display: block !important; }
 
     /* Sección Bienvenida */
     #home {
@@ -265,9 +265,10 @@
 
     .welcome-text-warning {
       font-size: 1.05rem;
-      color: #f87171;
+      color: #ff3b30;
       font-weight: 600;
       line-height: 1.6;
+      text-shadow: 0 0 6px rgba(255, 59, 48, 0.4);
     }
 
     /* Tablas */
@@ -401,7 +402,7 @@
       <a href="#" onclick="showSection('situaciones')">Situaciones</a>
     </div>
 
-    <!-- Sección Bienvenida limpia sin fondo -->
+    <!-- Sección Bienvenida -->
     <div id="home" class="section active">
       <div class="welcome-card">
         <img src="https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048" alt="Logo SirenMC" class="logo-large">
@@ -409,7 +410,7 @@
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
         </p>
       </div>
     </div>
@@ -516,9 +517,23 @@
     }
 
     function showSection(id) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      toggleMenu();
+      // Oculta todas las secciones
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(s => {
+        s.classList.remove('active');
+        s.style.display = 'none';
+      });
+
+      // Muestra solo la sección seleccionada
+      const targetSection = document.getElementById(id);
+      if (targetSection) {
+        targetSection.classList.add('active');
+        targetSection.style.display = id === 'home' ? 'flex' : 'block';
+      }
+
+      // Cierra la barra lateral y overlay
+      document.getElementById('sidebar').classList.remove('active');
+      document.querySelector('.overlay').classList.remove('active');
     }
   </script>
 </body>
