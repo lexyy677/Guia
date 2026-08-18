@@ -18,30 +18,53 @@
       min-height: 100vh;
     }
 
-    /* Login */
+    /* Contenedor Login con Banner */
     .auth-container { 
-      max-width: 380px; 
-      margin: 100px auto 0; 
-      padding: 32px; 
+      max-width: 400px; 
+      width: 90%;
+      margin: 60px auto 30px; 
       background: #131f37; 
-      border-radius: 8px; 
+      border-radius: 12px; 
       border: 1px solid #1e3a8a;
-      text-align: center; 
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .banner-container {
+      width: 100%;
+      height: 140px;
+      background: #080d1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #1e3a8a;
+      overflow: hidden;
+    }
+
+    .banner-logo {
+      max-height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .auth-body {
+      padding: 24px;
+      text-align: center;
     }
 
     .auth-container h2 { 
       margin-bottom: 20px; 
       color: #60a5fa; 
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 600;
     }
 
     .auth-container input { 
       width: 100%; 
-      padding: 10px 14px; 
+      padding: 12px 14px; 
       margin: 8px 0; 
       border: 1px solid #1e3a8a; 
-      border-radius: 6px; 
+      border-radius: 8px; 
       background: #0b1329; 
       color: #ffffff; 
       font-size: 0.95rem;
@@ -54,10 +77,10 @@
 
     .auth-container button { 
       width: 100%; 
-      padding: 10px; 
+      padding: 12px; 
       background: #2563eb; 
       border: none; 
-      border-radius: 6px; 
+      border-radius: 8px; 
       color: #ffffff; 
       font-weight: 600; 
       font-size: 0.95rem;
@@ -78,7 +101,7 @@
       background: #0b1329; 
       justify-content: center; 
       align-items: center; 
-      font-size: 1.8rem; 
+      font-size: 1.6rem; 
       color: #60a5fa; 
       font-weight: 500;
       z-index: 100; 
@@ -91,7 +114,7 @@
 
     header { 
       background: #131f37; 
-      padding: 14px 24px; 
+      padding: 14px 20px; 
       display: flex; 
       align-items: center; 
       justify-content: space-between; 
@@ -104,7 +127,7 @@
       background: none; 
       border: none; 
       color: #60a5fa; 
-      margin-right: 16px; 
+      margin-right: 14px; 
     }
 
     .logout-btn { 
@@ -114,7 +137,7 @@
       padding: 6px 14px; 
       border-radius: 6px; 
       cursor: pointer; 
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-weight: 500;
       transition: background 0.2s;
     }
@@ -123,7 +146,7 @@
       background: rgba(239, 68, 68, 0.15);
     }
 
-    /* Sidebar con Submenú desplegable */
+    /* Sidebar móvil */
     .sidebar { 
       position: fixed; 
       top: 0; 
@@ -144,15 +167,13 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      padding: 14px 24px; 
+      padding: 14px 20px; 
       color: #93c5fd; 
       text-decoration: none; 
       font-size: 0.95rem; 
       border-bottom: 1px solid #1d2d50; 
       background: none;
-      border-left: none;
-      border-right: none;
-      border-top: none;
+      border: none;
       cursor: pointer;
       text-align: left;
       transition: color 0.2s, background 0.2s;
@@ -163,14 +184,13 @@
       color: #ffffff; 
     }
 
-    /* Subcategorías */
     .submenu {
       display: none;
       background: #0b1329;
     }
 
     .submenu a {
-      padding-left: 40px;
+      padding-left: 36px;
       font-size: 0.88rem;
       color: #60a5fa;
       border-bottom: 1px solid #131f37;
@@ -190,10 +210,10 @@
     
     .overlay.active { display: block; }
 
-    /* Secciones */
+    /* Secciones principales */
     .section { 
       display: none; 
-      padding: 40px 20px; 
+      padding: 30px 16px; 
       max-width: 900px; 
       margin: 0 auto; 
       text-align: center; 
@@ -202,7 +222,7 @@
     .section.active { display: block; }
 
     .logo-large {
-      max-width: 240px;
+      max-width: 220px;
       width: 100%;
       height: auto;
       margin-bottom: 20px;
@@ -210,7 +230,7 @@
     }
 
     .guide-author {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #93c5fd;
     }
 
@@ -218,21 +238,26 @@
       color: #ffffff;
     }
 
-    /* Tablas */
+    /* Tablas adaptadas para celulares */
     .sancion-block {
       background: #131f37;
       border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 28px;
+      padding: 16px;
+      margin-bottom: 24px;
       border: 1px solid #1e3a8a;
       text-align: left;
     }
 
     .sub-title { 
       color: #60a5fa; 
-      margin-bottom: 14px; 
-      font-size: 1.3rem;
+      margin-bottom: 12px; 
+      font-size: 1.2rem;
       font-weight: 600;
+    }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
     }
 
     table { 
@@ -242,13 +267,14 @@
       border-radius: 6px; 
       overflow: hidden; 
       border: 1px solid #1d2d50;
+      min-width: 480px;
     }
 
     th, td { 
-      padding: 10px 14px; 
+      padding: 10px 12px; 
       border-bottom: 1px solid #1d2d50; 
       text-align: left; 
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
     th { 
@@ -266,23 +292,45 @@
     }
 
     .coming-soon {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: #60a5fa;
-      margin-top: 60px;
+      margin-top: 40px;
+    }
+
+    /* Responsivo Celulares */
+    @media (max-width: 480px) {
+      .auth-container {
+        margin-top: 30px;
+      }
+      .banner-container {
+        height: 110px;
+      }
+      .section {
+        padding: 20px 12px;
+      }
+      th, td {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Iniciar Sesión -->
+  <!-- Login con Banner -->
   <div id="auth-section" class="auth-container">
-    <h2>Guía Staff Team</h2>
-    <form id="auth-form">
-      <input type="text" id="nick" placeholder="Nick / Usuario" required>
-      <input type="email" id="correo" placeholder="Correo electrónico" required>
-      <input type="password" id="password" placeholder="Contraseña" required>
-      <button type="submit">Iniciar Sesión</button>
-    </form>
+    <div class="banner-container">
+      <img src="https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048" alt="Banner SirenMC" class="banner-logo">
+    </div>
+    <div class="auth-body">
+      <h2>Guía Staff Team</h2>
+      <form id="auth-form">
+        <input type="text" id="nick" placeholder="Nick / Usuario" required>
+        <input type="email" id="correo" placeholder="Correo electrónico" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+    </div>
   </div>
 
   <!-- Pantalla de Bienvenida -->
@@ -290,23 +338,22 @@
     <h1 id="welcome-text"></h1>
   </div>
 
-  <!-- Contenido Principal -->
+  <!-- Panel Principal -->
   <div id="main-content">
     <header>
       <div style="display: flex; align-items: center;">
         <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-        <h3 style="color: #ffffff; font-size: 1.05rem; font-weight: 600;">Guía Staff Team</h3>
+        <h3 style="color: #ffffff; font-size: 1rem; font-weight: 600;">Guía Staff Team</h3>
       </div>
       <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
     </header>
 
     <div class="overlay" onclick="toggleMenu()"></div>
 
-    <!-- Sidebar desplegable -->
+    <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
       <a href="#" onclick="showSection('home')">Bienvenida</a>
       
-      <!-- Menú desplegable Sanciones -->
       <button class="dropdown-btn" onclick="toggleSubmenu()">
         Sanciones <span id="arrow">▾</span>
       </button>
@@ -318,49 +365,53 @@
       <a href="#" onclick="showSection('situaciones')">Situaciones</a>
     </div>
 
-    <!-- Secciones independientes -->
+    <!-- Bienvenida -->
     <div id="home" class="section active">
       <img src="https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048" alt="Logo SirenMC" class="logo-large">
       <p class="guide-author">Esta guía es hecha por <strong>Lexyy677</strong> y se irá mejorando al paso del tiempo.</p>
     </div>
 
-    <!-- Categoria Muteos -->
+    <!-- Muteos -->
     <div id="muteos" class="section">
       <div class="sancion-block">
         <h2 class="sub-title">Muteos</h2>
-        <table>
-          <thead>
-            <tr><th>Razón</th><th>#1</th><th>#2</th><th>#3</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Lenguaje ofensivo</td><td>Warn</td><td>Mute 1h</td><td>Mute 2h</td></tr>
-            <tr><td>Flood/Spam</td><td>Warn</td><td>Mute 2h</td><td>Mute 4h</td></tr>
-            <tr><td>Toxicidad</td><td>Warn</td><td>Mute 1h</td><td>Mute 2h</td></tr>
-            <tr><td>Insultos al servidor</td><td>Mute 10h</td><td>-</td><td>-</td></tr>
-            <tr><td>Mención de contenido 18+</td><td>Mute 12h</td><td>-</td><td>-</td></tr>
-            <tr><td>Insultos al staff</td><td>Mute 5h</td><td>-</td><td>-</td></tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Razón</th><th>#1</th><th>#2</th><th>#3</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Lenguaje ofensivo</td><td>Warn</td><td>Mute 1h</td><td>Mute 2h</td></tr>
+              <tr><td>Flood/Spam</td><td>Warn</td><td>Mute 2h</td><td>Mute 4h</td></tr>
+              <tr><td>Toxicidad</td><td>Warn</td><td>Mute 1h</td><td>Mute 2h</td></tr>
+              <tr><td>Insultos al servidor</td><td>Mute 10h</td><td>-</td><td>-</td></tr>
+              <tr><td>Mención de contenido 18+</td><td>Mute 12h</td><td>-</td><td>-</td></tr>
+              <tr><td>Insultos al staff</td><td>Mute 5h</td><td>-</td><td>-</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
-    <!-- Categoria Baneos -->
+    <!-- Baneos -->
     <div id="baneos" class="section">
       <div class="sancion-block">
         <h2 class="sub-title">Baneos</h2>
-        <table>
-          <thead>
-            <tr><th>Razón</th><th>#1</th><th>#2</th><th>#3</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Bug Abuse</td><td>3d</td><td>6d</td><td>9d</td></tr>
-            <tr><td>Cómplice de hacker</td><td>3d</td><td>-</td><td>-</td></tr>
-            <tr><td>Mods Ilegales</td><td>10d</td><td>20d</td><td>30d</td></tr>
-            <tr><td>Hacks claros</td><td>30d</td><td>35d</td><td>40d</td></tr>
-            <tr><td>Robo de cuentas</td><td>Baneo PERMANENTE</td><td>-</td><td>-</td></tr>
-            <tr><td>Amenaza de doxxeo/doxxing</td><td>Baneo PERMANENTE</td><td>-</td><td>-</td></tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Razón</th><th>#1</th><th>#2</th><th>#3</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Bug Abuse</td><td>3d</td><td>6d</td><td>9d</td></tr>
+              <tr><td>Cómplice de hacker</td><td>3d</td><td>-</td><td>-</td></tr>
+              <tr><td>Mods Ilegales</td><td>10d</td><td>20d</td><td>30d</td></tr>
+              <tr><td>Hacks claros</td><td>30d</td><td>35d</td><td>40d</td></tr>
+              <tr><td>Robo de cuentas</td><td>Baneo PERMANENTE</td><td>-</td><td>-</td></tr>
+              <tr><td>Amenaza de doxxeo/doxxing</td><td>Baneo PERMANENTE</td><td>-</td><td>-</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
