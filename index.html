@@ -622,6 +622,20 @@ Pruebas:</div>
   <script src="database.js"></script>
 
   <script>
+    // Configuración de efectos de sonido
+    const sounds = {
+      click: new Audio('https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3'),
+      copy: new Audio('https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3'),
+      login: new Audio('https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3')
+    };
+
+    function playSound(soundName) {
+      if (sounds[soundName]) {
+        sounds[soundName].currentTime = 0;
+        sounds[soundName].play().catch(() => {}); // Evita bloqueos en navegadores estrictos
+      }
+    }
+
     document.getElementById('auth-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const nick = document.getElementById('nick').value;
@@ -635,6 +649,7 @@ Pruebas:</div>
       );
 
       if (foundUser) {
+        playSound('login');
         startWelcomeSession(foundUser.Contrasena);
       } else {
         alert('Credenciales incorrectas o usuario no autorizado.');
@@ -653,11 +668,13 @@ Pruebas:</div>
     }
 
     function toggleMenu() {
+      playSound('click');
       document.getElementById('sidebar').classList.toggle('active');
       document.querySelector('.overlay').classList.toggle('active');
     }
 
     function toggleSubmenu() {
+      playSound('click');
       const submenu = document.getElementById('sanciones-submenu');
       const arrow = document.getElementById('arrow');
       submenu.classList.toggle('show');
@@ -665,6 +682,8 @@ Pruebas:</div>
     }
 
     function showSection(id) {
+      playSound('click');
+      
       // Oculta todas las secciones
       const sections = document.querySelectorAll('.section');
       sections.forEach(s => {
@@ -684,12 +703,13 @@ Pruebas:</div>
       document.querySelector('.overlay').classList.remove('active');
     }
 
-    // Función para copiado rápido
+    // Función para copiado rápido con sonido
     function copyText(elementId, buttonElement) {
       const element = document.getElementById(elementId);
       const textToCopy = element.innerText;
 
       navigator.clipboard.writeText(textToCopy).then(() => {
+        playSound('copy');
         const originalText = buttonElement.innerText;
         buttonElement.innerText = '¡Copiado!';
         buttonElement.classList.add('copied');
