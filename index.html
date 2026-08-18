@@ -13,25 +13,25 @@
     }
 
     body { 
-      background-color: #0d1117; 
-      color: #c9d1d9; 
+      background-color: #0b1329; 
+      color: #d0e1fd; 
       min-height: 100vh;
     }
 
-    /* Login Limpio */
+    /* Login */
     .auth-container { 
       max-width: 380px; 
       margin: 100px auto 0; 
       padding: 32px; 
-      background: #161b22; 
+      background: #131f37; 
       border-radius: 8px; 
-      border: 1px solid #30363d;
+      border: 1px solid #1e3a8a;
       text-align: center; 
     }
 
     .auth-container h2 { 
       margin-bottom: 20px; 
-      color: #f0f6fc; 
+      color: #60a5fa; 
       font-size: 1.4rem;
       font-weight: 600;
     }
@@ -40,23 +40,23 @@
       width: 100%; 
       padding: 10px 14px; 
       margin: 8px 0; 
-      border: 1px solid #30363d; 
+      border: 1px solid #1e3a8a; 
       border-radius: 6px; 
-      background: #0d1117; 
-      color: #f0f6fc; 
+      background: #0b1329; 
+      color: #ffffff; 
       font-size: 0.95rem;
       outline: none;
     }
 
     .auth-container input:focus {
-      border-color: #58a6ff;
+      border-color: #3b82f6;
     }
 
     .auth-container button { 
       width: 100%; 
       padding: 10px; 
-      background: #238636; 
-      border: 1px solid rgba(240,246,252,0.1); 
+      background: #2563eb; 
+      border: none; 
       border-radius: 6px; 
       color: #ffffff; 
       font-weight: 600; 
@@ -67,7 +67,7 @@
     }
 
     .auth-container button:hover { 
-      background: #2ea043;
+      background: #1d4ed8;
     }
 
     /* Pantalla de Bienvenida */
@@ -75,11 +75,11 @@
       display: none; 
       position: fixed; 
       inset: 0; 
-      background: #0d1117; 
+      background: #0b1329; 
       justify-content: center; 
       align-items: center; 
       font-size: 1.8rem; 
-      color: #f0f6fc; 
+      color: #60a5fa; 
       font-weight: 500;
       z-index: 100; 
       text-align: center; 
@@ -90,12 +90,12 @@
     #main-content { display: none; }
 
     header { 
-      background: #161b22; 
+      background: #131f37; 
       padding: 14px 24px; 
       display: flex; 
       align-items: center; 
       justify-content: space-between; 
-      border-bottom: 1px solid #30363d; 
+      border-bottom: 1px solid #1e3a8a; 
     }
 
     .menu-btn { 
@@ -103,55 +103,81 @@
       cursor: pointer; 
       background: none; 
       border: none; 
-      color: #f0f6fc; 
+      color: #60a5fa; 
       margin-right: 16px; 
     }
 
     .logout-btn { 
       background: transparent; 
-      color: #f85149; 
-      border: 1px solid #30363d; 
+      color: #ef4444; 
+      border: 1px solid #1e3a8a; 
       padding: 6px 14px; 
       border-radius: 6px; 
       cursor: pointer; 
       font-size: 0.88rem;
       font-weight: 500;
-      transition: background 0.2s, border-color 0.2s;
+      transition: background 0.2s;
     }
 
     .logout-btn:hover { 
-      background: rgba(248, 81, 73, 0.1);
-      border-color: #f85149;
+      background: rgba(239, 68, 68, 0.15);
     }
 
+    /* Sidebar con Submenú desplegable */
     .sidebar { 
       position: fixed; 
       top: 0; 
       left: -260px; 
       width: 260px; 
       height: 100%; 
-      background: #161b22; 
+      background: #131f37; 
       transition: left 0.25s ease; 
       padding-top: 70px; 
       z-index: 50; 
-      border-right: 1px solid #30363d; 
+      border-right: 1px solid #1e3a8a; 
     }
 
     .sidebar.active { left: 0; }
 
-    .sidebar a { 
-      display: block; 
+    .sidebar a, .dropdown-btn { 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
       padding: 14px 24px; 
-      color: #8b949e; 
+      color: #93c5fd; 
       text-decoration: none; 
       font-size: 0.95rem; 
-      border-bottom: 1px solid #21262d; 
+      border-bottom: 1px solid #1d2d50; 
+      background: none;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      cursor: pointer;
+      text-align: left;
       transition: color 0.2s, background 0.2s;
     }
 
-    .sidebar a:hover { 
-      background: #21262d; 
-      color: #f0f6fc; 
+    .sidebar a:hover, .dropdown-btn:hover { 
+      background: #1d2d50; 
+      color: #ffffff; 
+    }
+
+    /* Subcategorías */
+    .submenu {
+      display: none;
+      background: #0b1329;
+    }
+
+    .submenu a {
+      padding-left: 40px;
+      font-size: 0.88rem;
+      color: #60a5fa;
+      border-bottom: 1px solid #131f37;
+    }
+
+    .submenu.show {
+      display: block;
     }
 
     .overlay { 
@@ -164,18 +190,17 @@
     
     .overlay.active { display: block; }
 
-    /* Secciones principales */
+    /* Secciones */
     .section { 
       display: none; 
       padding: 40px 20px; 
       max-width: 900px; 
       margin: 0 auto; 
       text-align: center; 
-    }
+    } 
     
     .section.active { display: block; }
 
-    /* Logo */
     .logo-large {
       max-width: 240px;
       width: 100%;
@@ -186,54 +211,54 @@
 
     .guide-author {
       font-size: 1rem;
-      color: #8b949e;
+      color: #93c5fd;
     }
 
     .guide-author strong {
-      color: #f0f6fc;
+      color: #ffffff;
     }
 
-    /* Tablas de Sanciones */
+    /* Tablas */
     .sancion-block {
-      background: #161b22;
+      background: #131f37;
       border-radius: 8px;
       padding: 20px;
       margin-bottom: 28px;
-      border: 1px solid #30363d;
+      border: 1px solid #1e3a8a;
       text-align: left;
     }
 
     .sub-title { 
-      color: #f0f6fc; 
+      color: #60a5fa; 
       margin-bottom: 14px; 
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 600;
     }
 
     table { 
       width: 100%; 
       border-collapse: collapse; 
-      background: #0d1117; 
+      background: #0b1329; 
       border-radius: 6px; 
       overflow: hidden; 
-      border: 1px solid #21262d;
+      border: 1px solid #1d2d50;
     }
 
     th, td { 
       padding: 10px 14px; 
-      border-bottom: 1px solid #21262d; 
+      border-bottom: 1px solid #1d2d50; 
       text-align: left; 
       font-size: 0.9rem;
     }
 
     th { 
-      background: #161b22; 
-      color: #8b949e; 
+      background: #1d2d50; 
+      color: #93c5fd; 
       font-weight: 600;
     }
 
     td { 
-      color: #c9d1d9; 
+      color: #d0e1fd; 
     }
 
     tr:last-child td {
@@ -242,7 +267,7 @@
 
     .coming-soon {
       font-size: 1.8rem;
-      color: #8b949e;
+      color: #60a5fa;
       margin-top: 60px;
     }
   </style>
@@ -270,30 +295,37 @@
     <header>
       <div style="display: flex; align-items: center;">
         <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-        <h3 style="color: #f0f6fc; font-size: 1.05rem; font-weight: 600;">Guía Staff Team</h3>
+        <h3 style="color: #ffffff; font-size: 1.05rem; font-weight: 600;">Guía Staff Team</h3>
       </div>
       <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
     </header>
 
     <div class="overlay" onclick="toggleMenu()"></div>
 
+    <!-- Sidebar desplegable -->
     <div class="sidebar" id="sidebar">
       <a href="#" onclick="showSection('home')">Bienvenida</a>
-      <a href="#" onclick="showSection('sanciones')">Sanciones</a>
+      
+      <!-- Menú desplegable Sanciones -->
+      <button class="dropdown-btn" onclick="toggleSubmenu()">
+        Sanciones <span id="arrow">▾</span>
+      </button>
+      <div class="submenu" id="sanciones-submenu">
+        <a href="#" onclick="showSection('muteos')">Muteos</a>
+        <a href="#" onclick="showSection('baneos')">Baneos</a>
+      </div>
+
       <a href="#" onclick="showSection('situaciones')">Situaciones</a>
     </div>
 
-    <!-- Bienvenida -->
+    <!-- Secciones independientes -->
     <div id="home" class="section active">
       <img src="https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048" alt="Logo SirenMC" class="logo-large">
       <p class="guide-author">Esta guía es hecha por <strong>Lexyy677</strong> y se irá mejorando al paso del tiempo.</p>
     </div>
 
-    <!-- Sanciones -->
-    <div id="sanciones" class="section">
-      <h1 style="color: #f0f6fc; font-size: 1.6rem; margin-bottom: 24px; font-weight: 600;">Sanciones</h1>
-      
-      <!-- Muteos -->
+    <!-- Categoria Muteos -->
+    <div id="muteos" class="section">
       <div class="sancion-block">
         <h2 class="sub-title">Muteos</h2>
         <table>
@@ -310,8 +342,10 @@
           </tbody>
         </table>
       </div>
+    </div>
 
-      <!-- Baneos -->
+    <!-- Categoria Baneos -->
+    <div id="baneos" class="section">
       <div class="sancion-block">
         <h2 class="sub-title">Baneos</h2>
         <table>
@@ -378,6 +412,13 @@
     function toggleMenu() {
       document.getElementById('sidebar').classList.toggle('active');
       document.querySelector('.overlay').classList.toggle('active');
+    }
+
+    function toggleSubmenu() {
+      const submenu = document.getElementById('sanciones-submenu');
+      const arrow = document.getElementById('arrow');
+      submenu.classList.toggle('show');
+      arrow.innerText = submenu.classList.contains('show') ? '▴' : '▾';
     }
 
     function showSection(id) {
