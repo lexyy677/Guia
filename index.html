@@ -367,15 +367,21 @@
       font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s, opacity 0.2s;
     }
 
-    .copy-btn:hover {
+    .copy-btn:hover:not(:disabled) {
       background: #1d4ed8;
     }
 
     .copy-btn.copied {
       background: #16a34a;
+    }
+
+    .copy-btn:disabled {
+      background: #475569;
+      cursor: not-allowed;
+      opacity: 0.8;
     }
 
     .command-warning {
@@ -487,7 +493,7 @@
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
         </p>
       </div>
     </div>
@@ -774,21 +780,39 @@ Pruebas:</div>
       document.querySelector('.overlay').classList.remove('active');
     }
 
-    // Función para copiado rápido con sonido
+    // Función para copiado rápido con Cooldown de 2 segundos
+    const COOLDOWN_TIME = 2; // Duración del Cooldown en segundos (cambiar a 1 si prefieres 1s)
+
     function copyText(elementId, buttonElement) {
+      if (buttonElement.disabled) return;
+
       const element = document.getElementById(elementId);
       const textToCopy = element.innerText;
 
       navigator.clipboard.writeText(textToCopy).then(() => {
         playSound('copy');
-        const originalText = buttonElement.innerText;
-        buttonElement.innerText = '¡Copiado!';
+        
+        // Bloquear el botón durante el cooldown
+        buttonElement.disabled = true;
         buttonElement.classList.add('copied');
 
-        setTimeout(() => {
-          buttonElement.innerText = originalText;
-          buttonElement.classList.remove('copied');
-        }, 2000);
+        const originalText = buttonElement.innerText.includes('Plantilla') ? 'Copiar Plantilla' : 'Copiar';
+        let remainingSeconds = COOLDOWN_TIME;
+
+        buttonElement.innerText = `¡Copiado! (${remainingSeconds}s)`;
+
+        const countdownInterval = setInterval(() => {
+          remainingSeconds--;
+          if (remainingSeconds > 0) {
+            buttonElement.innerText = `¡Copiado! (${remainingSeconds}s)`;
+          } else {
+            clearInterval(countdownInterval);
+            buttonElement.disabled = false;
+            buttonElement.innerText = originalText;
+            buttonElement.classList.remove('copied');
+          }
+        }, 1000);
+
       }).catch(err => {
         console.error('Error al copiar el texto: ', err);
       });
