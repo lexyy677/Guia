@@ -212,7 +212,7 @@
       inset: 0; 
       background: rgba(0,0,0,0.6); 
       z-index: 40; 
-    }
+    } 
     
     .overlay.active { display: block; }
 
@@ -271,7 +271,7 @@
       text-shadow: 0 0 6px rgba(255, 59, 48, 0.4);
     }
 
-    /* Tablas */
+    /* Tablas y bloques */
     .sancion-block {
       background: #131f37;
       border-radius: 10px;
@@ -286,6 +286,17 @@
       margin-bottom: 16px; 
       font-size: 1.35rem;
       font-weight: 600;
+    }
+
+    .info-text {
+      font-size: 0.95rem;
+      color: #a5c4f0;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .info-text p {
+      margin-bottom: 12px;
     }
 
     .table-responsive {
@@ -322,6 +333,40 @@
 
     tr:last-child td {
       border-bottom: none;
+    }
+
+    /* Estilos del Comando */
+    .command-footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #1d2d50;
+    }
+
+    .command-label {
+      font-size: 0.95rem;
+      color: #d0e1fd;
+      margin-bottom: 8px;
+    }
+
+    .command-box {
+      display: inline-block;
+      background: #070d1d;
+      color: #39ff14;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 600;
+      padding: 10px 16px;
+      border-radius: 6px;
+      border: 1px solid rgba(57, 255, 20, 0.3);
+      box-shadow: 0 0 8px rgba(57, 255, 20, 0.15);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      word-break: break-all;
+    }
+
+    .command-warning {
+      color: #ff3b30;
+      font-weight: 600;
+      font-size: 0.9rem;
     }
 
     .coming-soon {
@@ -410,7 +455,7 @@
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
         </p>
       </div>
     </div>
@@ -419,6 +464,16 @@
     <div id="muteos" class="section">
       <div class="sancion-block">
         <h2 class="sub-title">Muteos</h2>
+        
+        <div class="info-text">
+          <p>
+            Aquí encontrarás la lista completa y detallada con todos los motivos por los cuales se puede aplicar un silenciamiento (muteo) dentro del servidor. Queremos que este sistema sea lo más transparente y completo posible para todos, por lo que esta sección se mantendrá en constante revisión.
+          </p>
+          <p>
+            Si consideras que falta algún motivo importante que deba ser tomado en cuenta, por favor no dudes en comunicártelo al equipo de administración y moderación enviando un mensaje privado o escribiendo directamente en el canal correspondiente del staff team para poder evaluarlo e implementarlo cuanto antes.
+          </p>
+        </div>
+
         <div class="table-responsive">
           <table>
             <thead>
@@ -434,6 +489,12 @@
             </tbody>
           </table>
         </div>
+
+        <div class="command-footer">
+          <p class="command-label">Aquí está el comando para mutear:</p>
+          <div class="command-box">/muteip -s [nick] [motivo] [tiempo]</div>
+          <p class="command-warning">Es obligatorio siempre usar el -s</p>
+        </div>
       </div>
     </div>
 
@@ -441,6 +502,16 @@
     <div id="baneos" class="section">
       <div class="sancion-block">
         <h2 class="sub-title">Baneos</h2>
+
+        <div class="info-text">
+          <p>
+            Aquí encontrarás la lista completa y detallada con todos los motivos por los cuales se puede aplicar un baneo dentro del servidor. Queremos que este sistema sea lo más transparente y justo posible para todos, por lo que esta sección se mantendrá en constante revisión.
+          </p>
+          <p>
+            Si consideras que falta algún motivo importante que deba ser tomado en cuenta, por favor no dudes en comunicártelo al equipo de administración y moderación enviando un mensaje privado o escribiendo directamente en el canal correspondiente del staff team para poder evaluarlo e implementarlo cuanto antes.
+          </p>
+        </div>
+
         <div class="table-responsive">
           <table>
             <thead>
@@ -455,6 +526,12 @@
               <tr><td>Amenaza de doxxeo/doxxing</td><td>Baneo PERMANENTE</td><td>-</td><td>-</td></tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="command-footer">
+          <p class="command-label">Comando para banear correctamente:</p>
+          <div class="command-box">/banip -s [nick] [motivo] [tiempo]</div>
+          <p class="command-warning">es obligatorio usar siempre "-s"</p>
         </div>
       </div>
     </div>
