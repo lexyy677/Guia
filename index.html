@@ -666,7 +666,7 @@ Pruebas:</div>
 
     function showSection(id) {
       // Oculta todas las secciones
-      const sections = document.forEach ? document.querySelectorAll('.section') : [];
+      const sections = document.querySelectorAll('.section');
       sections.forEach(s => {
         s.classList.remove('active');
         s.style.display = 'none';
