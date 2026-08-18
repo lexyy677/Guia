@@ -20,6 +20,37 @@
       min-height: 100vh;
     }
 
+    /* Botón flotante para el sonido (visible siempre) */
+    .sound-toggle-btn {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      z-index: 200;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #131f37;
+      border: 1px solid #1e3a8a;
+      color: #60a5fa;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: background 0.2s, transform 0.1s, border-color 0.2s;
+    }
+
+    .sound-toggle-btn:hover {
+      background: #1d2d50;
+      border-color: #3b82f6;
+      transform: scale(1.05);
+    }
+
+    .sound-toggle-btn:active {
+      transform: scale(0.95);
+    }
+
     .login-wrapper {
       position: relative;
       min-height: 100vh;
@@ -119,15 +150,10 @@
       padding: 16px 28px; 
       display: flex; 
       align-items: center; 
-      justify-content: space-between; 
+      justify-content: flex-start; 
       border-bottom: 1px solid #1e3a8a; 
       position: relative;
       z-index: 10;
-    }
-
-    .header-left {
-      display: flex;
-      align-items: center;
     }
 
     .menu-btn { 
@@ -137,26 +163,6 @@
       border: none; 
       color: #60a5fa; 
       margin-right: 16px; 
-    }
-
-    .sound-toggle-btn {
-      background: #1d2d50;
-      border: 1px solid #1e3a8a;
-      color: #60a5fa;
-      padding: 8px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .sound-toggle-btn:hover {
-      background: #2563eb;
-      color: #ffffff;
     }
 
     .sidebar { 
@@ -451,6 +457,11 @@
 </head>
 <body>
 
+  <!-- Botón de sonido flotante global -->
+  <button class="sound-toggle-btn" id="sound-btn" onclick="toggleSound()" title="Silenciar / Activar sonido">
+    <span id="sound-icon">🔊</span>
+  </button>
+
   <div id="auth-section" class="login-wrapper">
     <div class="bg-banner"></div>
     <div class="auth-container">
@@ -470,14 +481,10 @@
 
   <div id="main-content">
     <header>
-      <div class="header-left">
+      <div style="display: flex; align-items: center;">
         <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
         <h3 style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Guía Staff Team</h3>
       </div>
-      <button class="sound-toggle-btn" id="sound-btn" onclick="toggleSound()">
-        <span id="sound-icon">🔊</span>
-        <span id="sound-text">Sonido</span>
-      </button>
     </header>
 
     <div class="overlay" onclick="toggleMenu()"></div>
@@ -647,14 +654,11 @@ Pruebas:</div>
     function toggleSound() {
       isMuted = !isMuted;
       const soundIcon = document.getElementById('sound-icon');
-      const soundText = document.getElementById('sound-text');
       
       if (isMuted) {
         soundIcon.innerText = '🔇';
-        soundText.innerText = 'Silenciado';
       } else {
         soundIcon.innerText = '🔊';
-        soundText.innerText = 'Sonido';
         playSound('click');
       }
     }
