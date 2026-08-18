@@ -119,10 +119,15 @@
       padding: 16px 28px; 
       display: flex; 
       align-items: center; 
-      justify-content: flex-start; 
+      justify-content: space-between; 
       border-bottom: 1px solid #1e3a8a; 
       position: relative;
       z-index: 10;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
     }
 
     .menu-btn { 
@@ -132,6 +137,26 @@
       border: none; 
       color: #60a5fa; 
       margin-right: 16px; 
+    }
+
+    .sound-toggle-btn {
+      background: #1d2d50;
+      border: 1px solid #1e3a8a;
+      color: #60a5fa;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .sound-toggle-btn:hover {
+      background: #2563eb;
+      color: #ffffff;
     }
 
     .sidebar { 
@@ -207,8 +232,8 @@
     
     .section.active { display: block !important; }
 
-    #home {
-      display: flex;
+    #home.active {
+      display: flex !important;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -445,10 +470,14 @@
 
   <div id="main-content">
     <header>
-      <div style="display: flex; align-items: center;">
+      <div class="header-left">
         <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
         <h3 style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Guía Staff Team</h3>
       </div>
+      <button class="sound-toggle-btn" id="sound-btn" onclick="toggleSound()">
+        <span id="sound-icon">🔊</span>
+        <span id="sound-text">Sonido</span>
+      </button>
     </header>
 
     <div class="overlay" onclick="toggleMenu()"></div>
@@ -475,7 +504,7 @@
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
         </p>
       </div>
     </div>
@@ -603,6 +632,7 @@ Pruebas:</div>
 
   <script>
     let audioCtx = null;
+    let isMuted = false;
 
     function getAudioContext() {
       if (!audioCtx) {
@@ -614,7 +644,24 @@ Pruebas:</div>
       return audioCtx;
     }
 
+    function toggleSound() {
+      isMuted = !isMuted;
+      const soundIcon = document.getElementById('sound-icon');
+      const soundText = document.getElementById('sound-text');
+      
+      if (isMuted) {
+        soundIcon.innerText = '🔇';
+        soundText.innerText = 'Silenciado';
+      } else {
+        soundIcon.innerText = '🔊';
+        soundText.innerText = 'Sonido';
+        playSound('click');
+      }
+    }
+
     function playSound(type) {
+      if (isMuted) return;
+
       try {
         const ctx = getAudioContext();
         const now = ctx.currentTime;
@@ -685,9 +732,9 @@ Pruebas:</div>
 
     document.getElementById('auth-form').addEventListener('submit', (e) => {
       e.preventDefault();
-      const nick = document.getElementById('nick').value;
-      const correo = document.getElementById('correo').value;
-      const password = document.getElementById('password').value;
+      const nick = document.getElementById('nick').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+      const password = document.getElementById('password').value.trim();
 
       const usersDB = typeof usersDatabase !== 'undefined' ? usersDatabase : [];
 
@@ -697,15 +744,15 @@ Pruebas:</div>
 
       if (foundUser) {
         playSound('login');
-        startWelcomeSession(foundUser.Contrasena);
+        startWelcomeSession(foundUser.Nick || nick);
       } else {
         alert('Credenciales incorrectas o usuario no autorizado.');
       }
     });
 
-    function startWelcomeSession(userPassword) {
+    function startWelcomeSession(userName) {
       document.getElementById('auth-section').style.display = 'none';
-      document.getElementById('welcome-text').innerText = `Bienvenido ${userPassword}`;
+      document.getElementById('welcome-text').innerText = `Bienvenido ${userName}`;
       document.getElementById('welcome-screen').style.display = 'flex';
 
       setTimeout(() => {
@@ -734,13 +781,11 @@ Pruebas:</div>
       const sections = document.querySelectorAll('.section');
       sections.forEach(s => {
         s.classList.remove('active');
-        s.style.display = 'none';
       });
 
       const targetSection = document.getElementById(id);
       if (targetSection) {
         targetSection.classList.add('active');
-        targetSection.style.display = id === 'home' ? 'flex' : 'block';
       }
 
       document.getElementById('sidebar').classList.remove('active');
