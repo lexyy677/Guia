@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía Staff Team - SirenMC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #0f172a; color: #f8fafc; min-height: 100vh; }
+    
+    /* Registro / Login */
+    .auth-container { max-width: 420px; margin: 60px auto; padding: 30px; background: #1e293b; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); text-align: center; }
+    .auth-container h2 { margin-bottom: 20px; color: #38bdf8; }
+    .auth-container input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #334155; border-radius: 6px; background: #0f172a; color: #fff; }
+    .auth-container button { width: 100%; padding: 12px; background: #0284c7; border: none; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; margin-top: 12px; }
+    .auth-container button:hover { background: #0369a1; }
+    .toggle-auth { margin-top: 15px; font-size: 0.9rem; color: #94a3b8; cursor: pointer; text-decoration: underline; }
+
+    /* Pantalla de Bienvenida */
+    #welcome-screen { display: none; position: fixed; inset: 0; background: #0f172a; justify-content: center; align-items: center; font-size: 2rem; color: #38bdf8; z-index: 100; flex-direction: column; text-align: center; padding: 20px; }
+
+    /* Contenido Principal */
+    #main-content { display: none; }
+    header { background: #1e293b; padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #334155; }
+    .header-left { display: flex; align-items: center; }
+    .menu-btn { font-size: 24px; cursor: pointer; background: none; border: none; color: white; margin-right: 20px; }
+    .logout-btn { background: #ef4444; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    .logout-btn:hover { background: #dc2626; }
+
+    /* Menú Lateral */
+    .sidebar { position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: #1e293b; transition: 0.3s; padding-top: 60px; z-index: 50; border-right: 1px solid #334155; }
+    .sidebar.active { left: 0; }
+    .sidebar a { display: block; padding: 15px 25px; color: #cbd5e1; text-decoration: none; font-size: 18px; border-bottom: 1px solid #334155; }
+    .sidebar a:hover { background: #334155; color: #38bdf8; }
+    
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 40; }
+    .overlay.active { display: block; }
+
+    /* Secciones */
+    .section { display: none; padding: 40px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
+    .section.active { display: block; }
+
+    /* Tablas de Sanciones */
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 40px 0; background: #1e293b; border-radius: 8px; overflow: hidden; }
+    th, td { padding: 12px 15px; border: 1px solid #334155; text-align: left; }
+    th { background: #0284c7; color: white; }
+    h2.sub-title { color: #38bdf8; text-align: left; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- Categoria Inicial: Iniciar Sesión / Registrarse -->
+  <div id="auth-section" class="auth-container">
+    <h2 id="auth-title">Iniciar Sesión</h2>
+    <form id="auth-form">
+      <input type="text" id="nombre" placeholder="Nombre real" style="display: none;">
+      <input type="text" id="nick" placeholder="Nick de Minecraft / Usuario" required>
+      <input type="email" id="correo" placeholder="Correo electrónico" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit" id="auth-btn">Entrar</button>
+    </form>
+    <div class="toggle-auth" id="toggle-auth" onclick="toggleAuthMode()">¿No tienes cuenta? Regístrate aquí</div>
+  </div>
+
+  <!-- Pantalla de Bienvenida Temporal -->
+  <div id="welcome-screen">
+    <h1 id="welcome-text"></h1>
+  </div>
+
+  <!-- Panel Principal -->
+  <div id="main-content">
+    <header>
+      <div class="header-left">
+        <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+        <h3>Guía Staff Team</h3>
+      </div>
+      <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+    </header>
+
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <div class="sidebar" id="sidebar">
+      <a href="#" onclick="showSection('home')">Bienvenida</a>
+      <a href="#" onclick="showSection('sanciones')">Sanciones</a>
+      <a href="#" onclick="showSection('situaciones')">Situaciones</a>
+    </div>
+
+    <!-- Sección Bienvenida -->
+    <div id="home" class="section active">
+      <img src="logo.png" alt="Logo de SirenMC" style="max-width: 200px; margin-bottom: 20px;">
+      <p>Esta guía es hecha por <strong>Lexyy677</strong> y se ira mejorando al paso del tiempo.</p>
+    </div>
+
+    <!-- Sección Sanciones -->
+    <div id="sanciones" class="section">
+      <h1>Sanciones</h1>
+      
+      <h2 class="sub-title">Muteos</h2>
+      <table>
+        <tr><th>Razón</th><th>#1</th><th>#2</th><th>#3</th></tr>
+        <tr><td>Lenguaje ofensivo</td><td>Warn</td><td>Mute 1h</td><td>Mute 2h</td></tr>
+        <tr><td>Flood/Spam</td><td>Warn</td><td>Mute 2h</td><td>Mute 4h</td></tr>
+        <tr><td>Toxicidad</td><td>Warn</td><td>Mute 1h</td><td>Mute 2h</td></tr>
+        <tr><td>Insultos al servidor</td><td>Mute 10h</td><td>-</td><td>-</td></tr>
+        <tr><td>Mención de contenido 18+</td><td>Mute 12h</td><td>-</td><td>-</td></tr>
+        <tr><td>Insultos al staff</td><td>Mute 5h</td><td>-</td><td>-</td></tr>
+      </table>
+
+      <h2 class="sub-title">Baneos</h2>
+      <table>
+        <tr><th>Razón</th><th>#1</th><th>#2</th><th>#3</th></tr>
+        <tr><td>Bug Abuse</td><td>3d</td><td>6d</td><td>9d</td></tr>
+        <tr><td>Cómplice de hacker</td><td>3d</td><td>-</td><td>-</td></tr>
+        <tr><td>Mods Ilegales</td><td>10d</td><td>20d</td><td>30d</td></tr>
+        <tr><td>Hacks claros</td><td>30d</td><td>35d</td><td>40d</td></tr>
+        <tr><td>Robo de cuentas</td><td>Baneo PERMANENTE</td><td>-</td><td>-</td></tr>
+        <tr><td>Amenaza de doxxeo/doxxing</td><td>Baneo PERMANENTE</td><td>-</td><td>-</td></tr>
+      </table>
+    </div>
+
+    <!-- Sección Situaciones -->
+    <div id="situaciones" class="section">
+      <h1>Coming Soon</h1>
+    </div>
+  </div>
+
+  <!-- Cargar Base de Datos Externa -->
+  <script src="database.js"></script>
+
+  <script>
+    let isRegisterMode = false;
+
+    function toggleAuthMode() {
+      isRegisterMode = !isRegisterMode;
+      const title = document.getElementById('auth-title');
+      const btn = document.getElementById('auth-btn');
+      const toggleText = document.getElementById('toggle-auth');
+      const nombreInput = document.getElementById('nombre');
+
+      if (isRegisterMode) {
+        title.innerText = 'Registrarse';
+        btn.innerText = 'Registrarse';
+        toggleText.innerText = '¿Ya tienes cuenta? Inicia sesión aquí';
+        nombreInput.style.display = 'block';
+        nombreInput.required = true;
+      } else {
+        title.innerText = 'Iniciar Sesión';
+        btn.innerText = 'Entrar';
+        toggleText.innerText = '¿No tienes cuenta? Regístrate aquí';
+        nombreInput.style.display = 'none';
+        nombreInput.required = false;
+      }
+    }
+
+    document.getElementById('auth-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const nick = document.getElementById('nick').value;
+      const correo = document.getElementById('correo').value;
+      const password = document.getElementById('password').value;
+
+      // Unir usuarios del archivo JS con los registrados desde el navegador
+      const usersDB = typeof usersDatabase !== 'undefined' ? usersDatabase : [];
+      const localUsers = JSON.parse(localStorage.getItem('staff_users') || '[]');
+      const allUsers = [...usersDB, ...localUsers];
+
+      if (isRegisterMode) {
+        // Guardar nueva cuenta
+        const newUser = { Nombre: nombre, Nick: nick, Correo: correo, Contrasena: password };
+        localUsers.push(newUser);
+        localStorage.setItem('staff_users', JSON.stringify(localUsers));
+        
+        // Entrar con el nombre igual a la contraseña como indicaste
+        startWelcomeSession(password);
+      } else {
+        // Verificar credenciales
+        const foundUser = allUsers.find(u => 
+          (u.Nick === nick || u.Correo === correo) && u.Contrasena === password
+        );
+
+        if (foundUser) {
+          startWelcomeSession(foundUser.Contrasena);
+        } else {
+          alert('Credenciales incorrectas o el usuario no existe.');
+        }
+      }
+    });
+
+    function startWelcomeSession(userPassword) {
+      document.getElementById('auth-section').style.display = 'none';
+      // Muestra "Bienvenido [Nombre del Usuario el cual sera el mismo de la contraseña]"
+      document.getElementById('welcome-text').innerText = `Bienvenido ${userPassword}`;
+      document.getElementById('welcome-screen').style.display = 'flex';
+
+      setTimeout(() => {
+        document.getElementById('welcome-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }, 3000);
+    }
+
+    function logout() {
+      document.getElementById('main-content').style.display = 'none';
+      document.getElementById('auth-section').style.display = 'block';
+      document.getElementById('auth-form').reset();
+    }
+
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
+      document.querySelector('.overlay').classList.toggle('active');
+    }
+
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      toggleMenu();
+    }
+  </script>
+</body>
+</html>
