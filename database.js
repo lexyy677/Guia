@@ -23,7 +23,7 @@ const usersDatabase = [
   {
     Nombre: "prueba",
     Nick: "prueba",
-    Correo: "prueba",
+    Correo: "prueba.com@prueba",
     Contrasena: "prueba"
   }
 ];
