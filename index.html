@@ -32,12 +32,12 @@
     .bg-banner {
       position: absolute;
       inset: 0;
-      background-image: linear-gradient(rgba(11, 19, 41, 0.85), rgba(11, 19, 41, 0.85)), 
+      background-image: linear-gradient(rgba(11, 19, 41, 0.8), rgba(11, 19, 41, 0.8)), 
                         url('https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048');
       background-size: cover;
       background-position: center;
-      filter: blur(8px);
-      transform: scale(1.08);
+      filter: blur(6px) brightness(1.1);
+      transform: scale(1.05);
       z-index: 1;
     }
 
@@ -45,9 +45,9 @@
     .auth-container { 
       position: relative;
       z-index: 2;
-      max-width: 380px; 
+      max-width: 420px; 
       width: 100%;
-      padding: 32px 24px; 
+      padding: 36px 28px; 
       background: rgba(19, 31, 55, 0.92); 
       border-radius: 12px; 
       border: 1px solid #1e3a8a;
@@ -59,7 +59,7 @@
     .auth-container h2 { 
       margin-bottom: 20px; 
       color: #60a5fa; 
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 600;
     }
 
@@ -105,7 +105,7 @@
       background: #0b1329; 
       justify-content: center; 
       align-items: center; 
-      font-size: 1.6rem; 
+      font-size: 1.8rem; 
       color: #60a5fa; 
       font-weight: 500;
       z-index: 100; 
@@ -118,7 +118,7 @@
 
     header { 
       background: #131f37; 
-      padding: 14px 20px; 
+      padding: 16px 28px; 
       display: flex; 
       align-items: center; 
       justify-content: space-between; 
@@ -128,22 +128,22 @@
     }
 
     .menu-btn { 
-      font-size: 22px; 
+      font-size: 24px; 
       cursor: pointer; 
       background: none; 
       border: none; 
       color: #60a5fa; 
-      margin-right: 14px; 
+      margin-right: 16px; 
     }
 
     .logout-btn { 
       background: transparent; 
       color: #ef4444; 
       border: 1px solid #1e3a8a; 
-      padding: 6px 14px; 
+      padding: 8px 16px; 
       border-radius: 6px; 
       cursor: pointer; 
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 500;
       transition: background 0.2s;
     }
@@ -156,12 +156,12 @@
     .sidebar { 
       position: fixed; 
       top: 0; 
-      left: -260px; 
-      width: 260px; 
+      left: -280px; 
+      width: 280px; 
       height: 100%; 
       background: #131f37; 
       transition: left 0.25s ease; 
-      padding-top: 70px; 
+      padding-top: 75px; 
       z-index: 50; 
       border-right: 1px solid #1e3a8a; 
     }
@@ -173,10 +173,10 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      padding: 14px 20px; 
+      padding: 16px 24px; 
       color: #93c5fd; 
       text-decoration: none; 
-      font-size: 0.95rem; 
+      font-size: 1rem; 
       border-bottom: 1px solid #1d2d50; 
       background: none;
       border: none;
@@ -196,8 +196,8 @@
     }
 
     .submenu a {
-      padding-left: 36px;
-      font-size: 0.88rem;
+      padding-left: 42px;
+      font-size: 0.92rem;
       color: #60a5fa;
       border-bottom: 1px solid #131f37;
     }
@@ -219,76 +219,82 @@
     /* Secciones principales */
     .section { 
       display: none; 
-      padding: 30px 16px; 
-      max-width: 900px; 
+      padding: 40px 20px; 
+      max-width: 1100px; 
       margin: 0 auto; 
       text-align: center; 
     } 
     
     .section.active { display: block; }
 
-    /* Sección Bienvenida con Fondo Difuminado Personalizado */
+    /* Sección Bienvenida: Más clara, menos difuminada y más grande para PC */
     #home {
       position: relative;
-      min-height: calc(100vh - 60px);
+      min-height: calc(100vh - 65px);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
       overflow: hidden;
     }
 
     .bg-welcome {
       position: absolute;
       inset: 0;
-      background-image: linear-gradient(rgba(11, 19, 41, 0.85), rgba(11, 19, 41, 0.85)), 
+      background-image: linear-gradient(rgba(11, 19, 41, 0.65), rgba(11, 19, 41, 0.65)), 
                         url('https://cdn.discordapp.com/attachments/1518081152986906708/1539173607991943168/istockphoto-2158621447-612x612.jpg?ex=6a855aa0&is=6a840920&hm=3260bbe1a04967bff834c9cabb15cc2e195eeb734b44a6e6a61466cf93c6b0f4&');
       background-size: cover;
       background-position: center;
-      filter: blur(8px);
-      transform: scale(1.08);
+      filter: blur(4px) brightness(1.15);
+      transform: scale(1.03);
       z-index: 1;
     }
 
     .welcome-content {
       position: relative;
       z-index: 2;
+      background: rgba(19, 31, 55, 0.55);
+      padding: 40px 50px;
+      border-radius: 16px;
+      border: 1px solid rgba(96, 165, 250, 0.25);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
     .logo-large {
-      max-width: 220px;
+      max-width: 320px;
       width: 100%;
       height: auto;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      margin-bottom: 24px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
 
     .guide-author {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #93c5fd;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.9);
     }
 
     .guide-author strong {
       color: #ffffff;
     }
 
-    /* Tablas adaptadas para celulares */
+    /* Tablas */
     .sancion-block {
       background: #131f37;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 24px;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
       border: 1px solid #1e3a8a;
       text-align: left;
     }
 
     .sub-title { 
       color: #60a5fa; 
-      margin-bottom: 12px; 
-      font-size: 1.2rem;
+      margin-bottom: 16px; 
+      font-size: 1.35rem;
       font-weight: 600;
     }
 
@@ -301,17 +307,17 @@
       width: 100%; 
       border-collapse: collapse; 
       background: #0b1329; 
-      border-radius: 6px; 
+      border-radius: 8px; 
       overflow: hidden; 
       border: 1px solid #1d2d50;
-      min-width: 480px;
+      min-width: 550px;
     }
 
     th, td { 
-      padding: 10px 12px; 
+      padding: 12px 16px; 
       border-bottom: 1px solid #1d2d50; 
       text-align: left; 
-      font-size: 0.88rem;
+      font-size: 0.95rem;
     }
 
     th { 
@@ -329,18 +335,27 @@
     }
 
     .coming-soon {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       color: #60a5fa;
-      margin-top: 40px;
+      margin-top: 50px;
     }
 
-    /* Responsivo */
-    @media (max-width: 480px) {
+    /* Ajustes para Celulares */
+    @media (max-width: 600px) {
       .auth-container {
         padding: 24px 18px;
       }
       .section {
         padding: 20px 12px;
+      }
+      .welcome-content {
+        padding: 24px 20px;
+      }
+      .logo-large {
+        max-width: 220px;
+      }
+      .guide-author {
+        font-size: 1rem;
       }
       th, td {
         padding: 8px 10px;
@@ -375,7 +390,7 @@
     <header>
       <div style="display: flex; align-items: center;">
         <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-        <h3 style="color: #ffffff; font-size: 1rem; font-weight: 600;">Guía Staff Team</h3>
+        <h3 style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Guía Staff Team</h3>
       </div>
       <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
     </header>
@@ -397,7 +412,7 @@
       <a href="#" onclick="showSection('situaciones')">Situaciones</a>
     </div>
 
-    <!-- Bienvenida con fondo difuminado -->
+    <!-- Bienvenida con fondo amplio y con más brillo -->
     <div id="home" class="section active">
       <div class="bg-welcome"></div>
       <div class="welcome-content">
