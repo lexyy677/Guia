@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guía Staff Team - SirenMC</title>
-  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048">
+  <title>Guía Staff Team - Whitemc</title>
+  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1518344048832806982/d352cc57f2cbf4055993647e2b40281e.png?size=2048">
 
   <style>
     * { 
@@ -15,8 +15,8 @@
     }
 
     body { 
-      background-color: #0b1329; 
-      color: #d0e1fd; 
+      background-color: #070d19; 
+      color: #e0f2fe; 
       min-height: 100vh;
     }
 
@@ -29,9 +29,9 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: #131f37;
-      border: 1px solid #1e3a8a;
-      color: #60a5fa;
+      background: #0f172a;
+      border: 1px solid #0284c7;
+      color: #38b6ff;
       font-size: 1.2rem;
       cursor: pointer;
       display: flex;
@@ -42,8 +42,8 @@
     }
 
     .sound-toggle-btn:hover {
-      background: #1d2d50;
-      border-color: #3b82f6;
+      background: #1e293b;
+      border-color: #38b6ff;
       transform: scale(1.05);
     }
 
@@ -64,11 +64,11 @@
     .bg-banner {
       position: absolute;
       inset: 0;
-      background-image: linear-gradient(rgba(11, 19, 41, 0.8), rgba(11, 19, 41, 0.8)), 
-                        url('https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048');
+      background-image: linear-gradient(rgba(7, 13, 25, 0.82), rgba(7, 13, 25, 0.82)), 
+                        url('https://cdn.discordapp.com/icons/1518344048832806982/d352cc57f2cbf4055993647e2b40281e.png?size=2048');
       background-size: cover;
       background-position: center;
-      filter: blur(6px) brightness(1.1);
+      filter: blur(8px) brightness(1.1);
       transform: scale(1.05);
       z-index: 1;
     }
@@ -79,9 +79,9 @@
       max-width: 420px; 
       width: 100%;
       padding: 36px 28px; 
-      background: rgba(19, 31, 55, 0.92); 
+      background: rgba(15, 23, 42, 0.92); 
       border-radius: 12px; 
-      border: 1px solid #1e3a8a;
+      border: 1px solid #0284c7;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
       text-align: center; 
       backdrop-filter: blur(10px);
@@ -89,7 +89,7 @@
 
     .auth-container h2 { 
       margin-bottom: 20px; 
-      color: #60a5fa; 
+      color: #38b6ff; 
       font-size: 1.4rem;
       font-weight: 600;
     }
@@ -98,22 +98,22 @@
       width: 100%; 
       padding: 12px 14px; 
       margin: 8px 0; 
-      border: 1px solid #1e3a8a; 
+      border: 1px solid #0369a1; 
       border-radius: 8px; 
-      background: #0b1329; 
+      background: #070d19; 
       color: #ffffff; 
       font-size: 0.95rem;
       outline: none;
     }
 
     .auth-container input:focus {
-      border-color: #3b82f6;
+      border-color: #38b6ff;
     }
 
     .auth-container button { 
       width: 100%; 
       padding: 12px; 
-      background: #2563eb; 
+      background: #0284c7; 
       border: none; 
       border-radius: 8px; 
       color: #ffffff; 
@@ -125,18 +125,18 @@
     }
 
     .auth-container button:hover { 
-      background: #1d4ed8;
+      background: #0369a1;
     }
 
     #welcome-screen { 
       display: none; 
       position: fixed; 
       inset: 0; 
-      background: #0b1329; 
+      background: #070d19; 
       justify-content: center; 
       align-items: center; 
       font-size: 1.8rem; 
-      color: #60a5fa; 
+      color: #38b6ff; 
       font-weight: 500;
       z-index: 100; 
       text-align: center; 
@@ -146,12 +146,12 @@
     #main-content { display: none; }
 
     header { 
-      background: #131f37; 
+      background: #0f172a; 
       padding: 16px 28px; 
       display: flex; 
       align-items: center; 
       justify-content: flex-start; 
-      border-bottom: 1px solid #1e3a8a; 
+      border-bottom: 1px solid #0284c7; 
       position: relative;
       z-index: 10;
     }
@@ -161,7 +161,7 @@
       cursor: pointer; 
       background: none; 
       border: none; 
-      color: #60a5fa; 
+      color: #38b6ff; 
       margin-right: 16px; 
     }
 
@@ -171,11 +171,11 @@
       left: -280px; 
       width: 280px; 
       height: 100%; 
-      background: #131f37; 
+      background: #0f172a; 
       transition: left 0.25s ease; 
       padding-top: 75px; 
       z-index: 50; 
-      border-right: 1px solid #1e3a8a; 
+      border-right: 1px solid #0284c7; 
     }
 
     .sidebar.active { left: 0; }
@@ -186,10 +186,10 @@
       align-items: center;
       width: 100%;
       padding: 16px 24px; 
-      color: #93c5fd; 
+      color: #bae6fd; 
       text-decoration: none; 
       font-size: 1rem; 
-      border-bottom: 1px solid #1d2d50; 
+      border-bottom: 1px solid #1e293b; 
       background: none;
       border: none;
       cursor: pointer;
@@ -198,20 +198,20 @@
     }
 
     .sidebar a:hover, .dropdown-btn:hover { 
-      background: #1d2d50; 
+      background: #1e293b; 
       color: #ffffff; 
     }
 
     .submenu {
       display: none;
-      background: #0b1329;
+      background: #070d19;
     }
 
     .submenu a {
       padding-left: 42px;
       font-size: 0.92rem;
-      color: #60a5fa;
-      border-bottom: 1px solid #131f37;
+      color: #38b6ff;
+      border-bottom: 1px solid #0f172a;
     }
 
     .submenu.show {
@@ -247,10 +247,10 @@
     }
 
     .welcome-card {
-      background: #131f37;
+      background: #0f172a;
       padding: 40px 32px;
       border-radius: 16px;
-      border: 1px solid #1e3a8a;
+      border: 1px solid #0284c7;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       max-width: 750px;
       width: 100%;
@@ -268,7 +268,7 @@
 
     .welcome-text-normal {
       font-size: 1.05rem;
-      color: #d0e1fd;
+      color: #e0f2fe;
       line-height: 1.6;
       margin-bottom: 16px;
     }
@@ -282,16 +282,16 @@
     }
 
     .sancion-block, .template-block, .ticket-block {
-      background: #131f37;
+      background: #0f172a;
       border-radius: 10px;
       padding: 24px;
       margin-bottom: 28px;
-      border: 1px solid #1e3a8a;
+      border: 1px solid #0284c7;
       text-align: left;
     }
 
     .sub-title { 
-      color: #60a5fa; 
+      color: #38b6ff; 
       margin-bottom: 16px; 
       font-size: 1.35rem;
       font-weight: 600;
@@ -299,7 +299,7 @@
 
     .info-text {
       font-size: 0.95rem;
-      color: #a5c4f0;
+      color: #bae6fd;
       line-height: 1.6;
       margin-bottom: 20px;
     }
@@ -316,14 +316,14 @@
     }
 
     .ticket-card {
-      background: #0b1329;
-      border: 1px solid #1d2d50;
+      background: #070d19;
+      border: 1px solid #1e293b;
       border-radius: 8px;
       padding: 18px;
     }
 
     .ticket-card h4 {
-      color: #60a5fa;
+      color: #38b6ff;
       margin-bottom: 10px;
       font-size: 1.1rem;
     }
@@ -331,14 +331,14 @@
     .ticket-card ul {
       list-style-type: square;
       margin-left: 20px;
-      color: #d0e1fd;
+      color: #e0f2fe;
       font-size: 0.92rem;
       line-height: 1.5;
     }
 
     .step-list {
       margin-left: 20px;
-      color: #a5c4f0;
+      color: #bae6fd;
       line-height: 1.7;
       font-size: 0.95rem;
     }
@@ -360,28 +360,28 @@
     table { 
       width: 100%; 
       border-collapse: collapse; 
-      background: #0b1329; 
+      background: #070d19; 
       border-radius: 8px; 
       overflow: hidden; 
-      border: 1px solid #1d2d50;
+      border: 1px solid #1e293b;
       min-width: 550px;
     }
 
     th, td { 
       padding: 12px 16px; 
-      border-bottom: 1px solid #1d2d50; 
+      border-bottom: 1px solid #1e293b; 
       text-align: left; 
       font-size: 0.95rem;
     }
 
     th { 
-      background: #1d2d50; 
-      color: #93c5fd; 
+      background: #1e293b; 
+      color: #7dd3fc; 
       font-weight: 600;
     }
 
     td { 
-      color: #d0e1fd; 
+      color: #e0f2fe; 
     }
 
     tr:last-child td {
@@ -391,12 +391,12 @@
     .command-footer {
       margin-top: 24px;
       padding-top: 16px;
-      border-top: 1px solid #1d2d50;
+      border-top: 1px solid #1e293b;
     }
 
     .command-label {
       font-size: 0.95rem;
-      color: #d0e1fd;
+      color: #e0f2fe;
       margin-bottom: 8px;
     }
 
@@ -404,7 +404,7 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: #070d1d;
+      background: #030712;
       padding: 6px 12px;
       border-radius: 6px;
       border: 1px solid rgba(57, 255, 20, 0.3);
@@ -423,7 +423,7 @@
     }
 
     .copy-btn {
-      background: #2563eb;
+      background: #0284c7;
       color: #ffffff;
       border: none;
       padding: 6px 12px;
@@ -435,7 +435,7 @@
     }
 
     .copy-btn:hover:not(:disabled) {
-      background: #1d4ed8;
+      background: #0369a1;
     }
 
     .copy-btn.copied {
@@ -455,14 +455,14 @@
     }
 
     .template-box {
-      background: #070d1d;
-      border: 1px solid #1e3a8a;
+      background: #030712;
+      border: 1px solid #0284c7;
       border-radius: 8px;
       padding: 16px;
       margin-bottom: 12px;
       white-space: pre-wrap;
       font-family: monospace;
-      color: #93c5fd;
+      color: #7dd3fc;
       font-size: 0.9rem;
     }
 
@@ -503,7 +503,7 @@
   <div id="auth-section" class="login-wrapper">
     <div class="bg-banner"></div>
     <div class="auth-container">
-      <h2>Guía Staff Team</h2>
+      <h2>Guía Staff Team - Whitemc</h2>
       <form id="auth-form">
         <input type="text" id="nick" placeholder="Nick / Usuario" required>
         <input type="email" id="correo" placeholder="Correo electrónico" required>
@@ -521,7 +521,7 @@
     <header>
       <div style="display: flex; align-items: center;">
         <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-        <h3 style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Guía Staff Team</h3>
+        <h3 style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Guía Staff Team - Whitemc</h3>
       </div>
     </header>
 
@@ -544,12 +544,12 @@
 
     <div id="home" class="section active">
       <div class="welcome-card">
-        <img src="https://cdn.discordapp.com/icons/1514990037895483392/6c23719ef48b6cafbab792a7463a98ce.png?size=2048" alt="Logo SirenMC" class="logo-large">
+        <img src="https://cdn.discordapp.com/icons/1518344048832806982/d352cc57f2cbf4055993647e2b40281e.png?size=2048" alt="Logo Whitemc" class="logo-large">
         <p class="welcome-text-normal">
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
         </p>
       </div>
     </div>
@@ -641,26 +641,26 @@
           Haz clic en "Copiar Plantilla" para pegar directamente el formato en Discord.
         </p>
 
-        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">Plantilla de Tickets</h3>
+        <h3 style="color: #7dd3fc; margin-bottom: 8px; font-size: 1rem;">Plantilla de Tickets</h3>
         <div class="template-box" id="temp-tickets">Nick: 
 Pruebas:</div>
         <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-tickets', this)">Copiar Plantilla</button>
 
-        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">Plantilla de Baneos</h3>
+        <h3 style="color: #7dd3fc; margin-bottom: 8px; font-size: 1rem;">Plantilla de Baneos</h3>
         <div class="template-box" id="temp-baneos">Nick: 
 Motivo: 
 Tiempo: 
 Pruebas:</div>
         <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-baneos', this)">Copiar Plantilla</button>
 
-        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">Plantilla de Muteos</h3>
+        <h3 style="color: #7dd3fc; margin-bottom: 8px; font-size: 1rem;">Plantilla de Muteos</h3>
         <div class="template-box" id="temp-muteos">Nick: 
 Motivo: 
 Tiempo: 
 Pruebas:</div>
         <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-muteos', this)">Copiar Plantilla</button>
 
-        <h3 style="color: #93c5fd; margin-bottom: 8px; font-size: 1rem;">Plantilla de Revives</h3>
+        <h3 style="color: #7dd3fc; margin-bottom: 8px; font-size: 1rem;">Plantilla de Revives</h3>
         <div class="template-box" id="temp-revives">Nick: 
 Motivo: 
 Pruebas:</div>
@@ -676,15 +676,15 @@ Pruebas:</div>
           A continuación se detallan los procedimientos para resolver las distintas situaciones que ocurren en la comunidad.
         </p>
 
-        <h3 style="color: #93c5fd; margin: 20px 0 10px; font-size: 1.1rem;">📌 Procedimiento General de Atención</h3>
+        <h3 style="color: #7dd3fc; margin: 20px 0 10px; font-size: 1.1rem;">📌 Procedimiento General de Atención</h3>
         <ol class="step-list">
-          <li><strong>Saludador Inicial:</strong> Envía un saludo amable usando el formato correspondiente (por ejemplo: <code>¡Hola @Usuario! Bienvenido al soporte de SirenMC. ¿En qué podemos ayudarte hoy?</code>).</li>
+          <li><strong>Saludador Inicial:</strong> Envía un saludo amable usando el formato correspondiente (por ejemplo: <code>¡Hola @Usuario! Bienvenido al soporte de Whitemc. ¿En qué podemos ayudarte hoy?</code>).</li>
           <li><strong>Pedir la Plantilla:</strong> Si el usuario no ha puesto sus datos, reenvíale la plantilla correspondiente.</li>
           <li><strong>Evaluar Pruebas:</strong> Verifica que los videos o capturas no estén editados, recortados o borrosos.</li>
           <li><strong>Cierre del Caso:</strong> Una vez resuelta la duda o aplicada la sanción, indícale al usuario si requiere algo más y procede a cerrar el caso.</li>
         </ol>
 
-        <h3 style="color: #93c5fd; margin: 28px 0 12px; font-size: 1.1rem;">📂 Tipos de Situaciones</h3>
+        <h3 style="color: #7dd3fc; margin: 28px 0 12px; font-size: 1.1rem;">📂 Tipos de Situaciones</h3>
         
         <div class="ticket-card-grid">
           <div class="ticket-card">
@@ -723,7 +723,7 @@ Pruebas:</div>
 
         <div style="margin-top: 24px; padding: 14px; background: rgba(255, 59, 48, 0.1); border-left: 4px solid #ff3b30; border-radius: 4px;">
           <p style="color: #ff3b30; font-weight: 600; font-size: 0.95rem;">⚠️ Reglas de Oro para el Staff:</p>
-          <p style="color: #d0e1fd; font-size: 0.9rem; margin-top: 4px;">
+          <p style="color: #e0f2fe; font-size: 0.9rem; margin-top: 4px;">
             1. Mantén la calma en todo momento, incluso si el usuario es grosero (si agrede, se le aplica mute según corresponda).<br>
             2. Nunca elimines un registro de atención sin haber dejado constancia/registro si se aplicó alguna sanción.
           </p>
