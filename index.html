@@ -347,7 +347,6 @@
       margin-bottom: 10px;
     }
 
-    /* Estilo para destacar la palabra Owner en rojo */
     .owner-tag {
       color: #ff3b30;
       font-weight: bold;
@@ -669,7 +668,7 @@ Pruebas:</div>
       </div>
     </div>
 
-    <!-- SECCIÓN DE SITUACIONES (REEMPLAZA LA GUÍA DE TICKETS) -->
+    <!-- SECCIÓN DE SITUACIONES -->
     <div id="situaciones" class="section">
       <div class="ticket-block">
         <h2 class="sub-title">Situaciones y Manejo de Casos</h2>
@@ -702,7 +701,6 @@ Pruebas:</div>
             <ul>
               <li><strong>Solicitar:</strong> Nick del sancionado y motivo exacto de la apelación.</li>
               <li><strong>Verificación:</strong> Revisa el log o el staff que aplicó la sanción.</li>
-              <li><strong>Regra:</strong> Si admite el error y es primera vez, consultar únicamente con <span class="owner-tag">Owner</span>.</li>
             </ul>
           </div>
 
@@ -719,7 +717,6 @@ Pruebas:</div>
             <h4>🐛 Reporte de Bugs</h4>
             <ul>
               <li><strong>Solicitar:</strong> Explicación paso a paso de cómo se reproduce el bug y captura/video.</li>
-              <li><strong>Recompensa:</strong> Si es un bug crítico, notificar al <span class="owner-tag">Owner</span> para evaluar recompensa al usuario.</li>
             </ul>
           </div>
         </div>
@@ -757,7 +754,7 @@ Pruebas:</div>
       const soundIcon = document.getElementById('sound-icon');
       
       if (isMuted) {
-        soundIcon.innerText = '0';
+        soundIcon.innerText = '🔇';
       } else {
         soundIcon.innerText = '🔊';
         playSound('click');
