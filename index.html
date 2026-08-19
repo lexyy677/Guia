@@ -20,7 +20,6 @@
       min-height: 100vh;
     }
 
-    /* Contador de visitas flotante arriba a la izquierda */
     .visit-counter-btn {
       position: fixed;
       top: 16px;
@@ -578,7 +577,7 @@
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
         </p>
       </div>
     </div>
@@ -766,21 +765,30 @@ Pruebas:</div>
   <script>
     async function updateVisitCount() {
       const counterElement = document.getElementById('visit-count');
+      const namespace = 'whitemc_guia_staff_2026';
+      const key = 'visitas_totales';
+
       try {
-        const response = await fetch('https://api.counterapi.dev/v1/whitemc_staff_guia/visitas/up');
-        const data = await response.json();
-        if (data && data.count) {
-          counterElement.innerText = data.count.toLocaleString();
+        const res = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
+        const data = await res.json();
+        
+        if (data && data.value !== undefined) {
+          counterElement.innerText = data.value.toLocaleString();
         } else {
-          counterElement.innerText = '1';
+          throw new Error("Respuesta inválida");
         }
-      } catch (error) {
-        console.error('Error al obtener el contador de visitas:', error);
-        counterElement.innerText = '-';
+      } catch (err) {
+        try {
+          const fallbackRes = await fetch(`https://api.moesif.com/v1/counter?id=${namespace}`);
+          const fallbackData = await fallbackRes.json();
+          counterElement.innerText = fallbackData.count || '1';
+        } catch (e) {
+          counterElement.innerText = 'Online';
+        }
       }
     }
 
-    window.addEventListener('DOMContentLoaded', updateVisitCount);
+    document.addEventListener('DOMContentLoaded', updateVisitCount);
 
     let audioCtx = null;
     let isMuted = false;
