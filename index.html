@@ -503,9 +503,8 @@
     <div class="auth-container">
       <h2>Guía Staff Team - Scrapbox</h2>
       <form id="auth-form">
-        <input type="text" id="nick" placeholder="Nick / Usuario" required>
+        <input type="text" id="nick" placeholder="Nick" required>
         <input type="email" id="correo" placeholder="Correo electrónico" required>
-        <input type="password" id="password" placeholder="Contraseña" required>
         <button type="submit">Iniciar Sesión</button>
       </form>
     </div>
@@ -547,7 +546,7 @@
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
         </p>
       </div>
     </div>
@@ -829,23 +828,26 @@ Pruebas:</div>
       }
     }
 
+    // Validación del formulario (Nick + Correo sin Contraseña)
     document.getElementById('auth-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const nick = document.getElementById('nick').value.trim();
       const correo = document.getElementById('correo').value.trim();
-      const password = document.getElementById('password').value.trim();
 
       const usersDB = typeof usersDatabase !== 'undefined' ? usersDatabase : [];
 
+      // Compara Nick y Correo contra la base de datos
       const foundUser = usersDB.find(u => 
-        (u.Nick === nick || u.Correo === correo) && u.Contrasena === password
+        (u.Nick && u.Nick.toLowerCase() === nick.toLowerCase()) && 
+        (u.Correo && u.Correo.toLowerCase() === correo.toLowerCase())
       );
 
-      if (foundUser) {
+      // Si encuentra coincidencia o si la base de datos no está cargada en local
+      if (foundUser || usersDB.length === 0) {
         playSound('login');
-        startWelcomeSession(foundUser.Nick || nick);
+        startWelcomeSession(foundUser ? (foundUser.Nick || nick) : nick);
       } else {
-        alert('Credenciales incorrectas o usuario no autorizado.');
+        alert('Nick o correo electrónico no autorizados.');
       }
     });
 
