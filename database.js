@@ -1,29 +1,10 @@
-// Base de datos de cuentas predeterminadas del Staff
-// Puedes añadir o editar las personas que quieras en esta lista:
-
 const usersDatabase = [
   {
-    Nombre: "Alexis",
-    Nick: "Lexyy677",
-    Correo: "lexyy@sirenmc.net",
-    Contrasena: "Lexyy677"
+    Nick: "Plaga15_",
+    Correo: "Plaga15@gmail.com"
   },
   {
-    Nombre: "Juan Pérez",
-    Nick: "JuanStaff",
-    Correo: "juan@sirenmc.net",
-    Contrasena: "JuanStaff"
-  },
-  {
-    Nombre: "Carlos",
-    Nick: "CarlitosMC",
-    Correo: "carlos@sirenmc.net",
-    Contrasena: "CarlitosMC"
-  },
-  {
-    Nombre: "prueba",
-    Nick: "prueba",
-    Correo: "prueba.com@prueba",
-    Contrasena: "prueba"
+    Nick: "kenxshy_",
+    Correo: "sjsjspepd@gmail.com"
   }
 ];
