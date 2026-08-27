@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guía Staff Team - Scrapbox</title>
-  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1518344048832806982/d352cc57f2cbf4055993647e2b40281e.png?size=2048">
+  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1518081278799515708/1542461090321924106/Proyecto_nuevo_17.png?ex=6a915055&is=6a8ffed5&hm=30306adb391e96b9efa4ff5709373c01fa78a6bba4d94d4111a9fe6282bc19ed&">
 
   <style>
     * { 
@@ -15,8 +15,8 @@
     }
 
     body { 
-      background-color: #070d19; 
-      color: #e0f2fe; 
+      background-color: #06140d; 
+      color: #e6f7ed; 
       min-height: 100vh;
     }
 
@@ -28,9 +28,9 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: #0f172a;
-      border: 1px solid #0284c7;
-      color: #38b6ff;
+      background: #0d2618;
+      border: 1px solid #16a34a;
+      color: #22c55e;
       font-size: 1.2rem;
       cursor: pointer;
       display: flex;
@@ -41,8 +41,8 @@
     }
 
     .sound-toggle-btn:hover {
-      background: #1e293b;
-      border-color: #38b6ff;
+      background: #143d27;
+      border-color: #4ade80;
       transform: scale(1.05);
     }
 
@@ -63,8 +63,8 @@
     .bg-banner {
       position: absolute;
       inset: 0;
-      background-image: linear-gradient(rgba(7, 13, 25, 0.82), rgba(7, 13, 25, 0.82)), 
-                        url('https://cdn.discordapp.com/icons/1518344048832806982/d352cc57f2cbf4055993647e2b40281e.png?size=2048');
+      background-image: linear-gradient(rgba(6, 20, 13, 0.85), rgba(6, 20, 13, 0.85)), 
+                        url('https://cdn.discordapp.com/attachments/1518081278799515708/1542461090321924106/Proyecto_nuevo_17.png?ex=6a915055&is=6a8ffed5&hm=30306adb391e96b9efa4ff5709373c01fa78a6bba4d94d4111a9fe6282bc19ed&');
       background-size: cover;
       background-position: center;
       filter: blur(8px) brightness(1.1);
@@ -78,9 +78,9 @@
       max-width: 420px; 
       width: 100%;
       padding: 36px 28px; 
-      background: rgba(15, 23, 42, 0.92); 
+      background: rgba(13, 38, 24, 0.92); 
       border-radius: 12px; 
-      border: 1px solid #0284c7;
+      border: 1px solid #16a34a;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
       text-align: center; 
       backdrop-filter: blur(10px);
@@ -88,7 +88,7 @@
 
     .auth-container h2 { 
       margin-bottom: 20px; 
-      color: #38b6ff; 
+      color: #ffffff; 
       font-size: 1.4rem;
       font-weight: 600;
     }
@@ -97,22 +97,22 @@
       width: 100%; 
       padding: 12px 14px; 
       margin: 8px 0; 
-      border: 1px solid #0369a1; 
+      border: 1px solid #15803d; 
       border-radius: 8px; 
-      background: #070d19; 
+      background: #06140d; 
       color: #ffffff; 
       font-size: 0.95rem;
       outline: none;
     }
 
     .auth-container input:focus {
-      border-color: #38b6ff;
+      border-color: #22c55e;
     }
 
     .auth-container button { 
       width: 100%; 
       padding: 12px; 
-      background: #0284c7; 
+      background: #16a34a; 
       border: none; 
       border-radius: 8px; 
       color: #ffffff; 
@@ -124,18 +124,18 @@
     }
 
     .auth-container button:hover { 
-      background: #0369a1;
+      background: #15803d;
     }
 
     #welcome-screen { 
       display: none; 
       position: fixed; 
       inset: 0; 
-      background: #070d19; 
+      background: #06140d; 
       justify-content: center; 
       align-items: center; 
       font-size: 1.8rem; 
-      color: #38b6ff; 
+      color: #ffffff; 
       font-weight: 500;
       z-index: 100; 
       text-align: center; 
@@ -145,12 +145,12 @@
     #main-content { display: none; }
 
     header { 
-      background: #0f172a; 
+      background: #0d2618; 
       padding: 16px 28px; 
       display: flex; 
       align-items: center; 
       justify-content: flex-start; 
-      border-bottom: 1px solid #0284c7; 
+      border-bottom: 1px solid #16a34a; 
       position: relative;
       z-index: 10;
     }
@@ -160,7 +160,7 @@
       cursor: pointer; 
       background: none; 
       border: none; 
-      color: #38b6ff; 
+      color: #22c55e; 
       margin-right: 16px; 
     }
 
@@ -170,11 +170,11 @@
       left: -280px; 
       width: 280px; 
       height: 100%; 
-      background: #0f172a; 
+      background: #0d2618; 
       transition: left 0.25s ease; 
       padding-top: 75px; 
       z-index: 50; 
-      border-right: 1px solid #0284c7; 
+      border-right: 1px solid #16a34a; 
     }
 
     .sidebar.active { left: 0; }
@@ -185,10 +185,10 @@
       align-items: center;
       width: 100%;
       padding: 16px 24px; 
-      color: #bae6fd; 
+      color: #dcfce7; 
       text-decoration: none; 
       font-size: 1rem; 
-      border-bottom: 1px solid #1e293b; 
+      border-bottom: 1px solid #143d27; 
       background: none;
       border: none;
       cursor: pointer;
@@ -197,20 +197,20 @@
     }
 
     .sidebar a:hover, .dropdown-btn:hover { 
-      background: #1e293b; 
+      background: #143d27; 
       color: #ffffff; 
     }
 
     .submenu {
       display: none;
-      background: #070d19;
+      background: #06140d;
     }
 
     .submenu a {
       padding-left: 42px;
       font-size: 0.92rem;
-      color: #38b6ff;
-      border-bottom: 1px solid #0f172a;
+      color: #4ade80;
+      border-bottom: 1px solid #0d2618;
     }
 
     .submenu.show {
@@ -246,10 +246,10 @@
     }
 
     .welcome-card {
-      background: #0f172a;
+      background: #0d2618;
       padding: 40px 32px;
       border-radius: 16px;
-      border: 1px solid #0284c7;
+      border: 1px solid #16a34a;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       max-width: 750px;
       width: 100%;
@@ -267,30 +267,30 @@
 
     .welcome-text-normal {
       font-size: 1.05rem;
-      color: #e0f2fe;
+      color: #ffffff;
       line-height: 1.6;
       margin-bottom: 16px;
     }
 
     .welcome-text-warning {
       font-size: 1.05rem;
-      color: #ff3b30;
+      color: #ff4d4d;
       font-weight: 600;
       line-height: 1.6;
-      text-shadow: 0 0 6px rgba(255, 59, 48, 0.4);
+      text-shadow: 0 0 6px rgba(255, 77, 77, 0.4);
     }
 
     .sancion-block, .template-block, .ticket-block {
-      background: #0f172a;
+      background: #0d2618;
       border-radius: 10px;
       padding: 24px;
       margin-bottom: 28px;
-      border: 1px solid #0284c7;
+      border: 1px solid #16a34a;
       text-align: left;
     }
 
     .sub-title { 
-      color: #38b6ff; 
+      color: #ffffff; 
       margin-bottom: 16px; 
       font-size: 1.35rem;
       font-weight: 600;
@@ -298,7 +298,7 @@
 
     .info-text {
       font-size: 0.95rem;
-      color: #bae6fd;
+      color: #dcfce7;
       line-height: 1.6;
       margin-bottom: 20px;
     }
@@ -315,14 +315,14 @@
     }
 
     .ticket-card {
-      background: #070d19;
-      border: 1px solid #1e293b;
+      background: #06140d;
+      border: 1px solid #143d27;
       border-radius: 8px;
       padding: 18px;
     }
 
     .ticket-card h4 {
-      color: #38b6ff;
+      color: #4ade80;
       margin-bottom: 10px;
       font-size: 1.1rem;
     }
@@ -330,14 +330,14 @@
     .ticket-card ul {
       list-style-type: square;
       margin-left: 20px;
-      color: #e0f2fe;
+      color: #ffffff;
       font-size: 0.92rem;
       line-height: 1.5;
     }
 
     .step-list {
       margin-left: 20px;
-      color: #bae6fd;
+      color: #dcfce7;
       line-height: 1.7;
       font-size: 0.95rem;
     }
@@ -347,7 +347,7 @@
     }
 
     .owner-tag {
-      color: #ff3b30;
+      color: #ff4d4d;
       font-weight: bold;
     }
 
@@ -359,28 +359,28 @@
     table { 
       width: 100%; 
       border-collapse: collapse; 
-      background: #070d19; 
+      background: #06140d; 
       border-radius: 8px; 
       overflow: hidden; 
-      border: 1px solid #1e293b;
+      border: 1px solid #143d27;
       min-width: 550px;
     }
 
     th, td { 
       padding: 12px 16px; 
-      border-bottom: 1px solid #1e293b; 
+      border-bottom: 1px solid #143d27; 
       text-align: left; 
       font-size: 0.95rem;
     }
 
     th { 
-      background: #1e293b; 
-      color: #7dd3fc; 
+      background: #143d27; 
+      color: #86efac; 
       font-weight: 600;
     }
 
     td { 
-      color: #e0f2fe; 
+      color: #ffffff; 
     }
 
     tr:last-child td {
@@ -390,12 +390,12 @@
     .command-footer {
       margin-top: 24px;
       padding-top: 16px;
-      border-top: 1px solid #1e293b;
+      border-top: 1px solid #143d27;
     }
 
     .command-label {
       font-size: 0.95rem;
-      color: #e0f2fe;
+      color: #ffffff;
       margin-bottom: 8px;
     }
 
@@ -403,18 +403,18 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: #030712;
+      background: #020904;
       padding: 6px 12px;
       border-radius: 6px;
-      border: 1px solid rgba(57, 255, 20, 0.3);
-      box-shadow: 0 0 8px rgba(57, 255, 20, 0.15);
+      border: 1px solid rgba(74, 222, 128, 0.4);
+      box-shadow: 0 0 8px rgba(74, 222, 128, 0.15);
       margin-bottom: 10px;
       max-width: 100%;
       flex-wrap: wrap;
     }
 
     .command-box {
-      color: #39ff14;
+      color: #4ade80;
       font-family: 'Courier New', Courier, monospace;
       font-weight: 600;
       font-size: 0.95rem;
@@ -422,7 +422,7 @@
     }
 
     .copy-btn {
-      background: #0284c7;
+      background: #16a34a;
       color: #ffffff;
       border: none;
       padding: 6px 12px;
@@ -434,34 +434,34 @@
     }
 
     .copy-btn:hover:not(:disabled) {
-      background: #0369a1;
+      background: #15803d;
     }
 
     .copy-btn.copied {
-      background: #16a34a;
+      background: #22c55e;
     }
 
     .copy-btn:disabled {
-      background: #475569;
+      background: #365314;
       cursor: not-allowed;
       opacity: 0.8;
     }
 
     .command-warning {
-      color: #ff3b30;
+      color: #ff4d4d;
       font-weight: 600;
       font-size: 0.9rem;
     }
 
     .template-box {
-      background: #030712;
-      border: 1px solid #0284c7;
+      background: #020904;
+      border: 1px solid #16a34a;
       border-radius: 8px;
       padding: 16px;
       margin-bottom: 12px;
       white-space: pre-wrap;
       font-family: monospace;
-      color: #7dd3fc;
+      color: #ffffff;
       font-size: 0.9rem;
     }
 
@@ -542,12 +542,12 @@
 
     <div id="home" class="section active">
       <div class="welcome-card">
-        <img src="https://cdn.discordapp.com/icons/1518344048832806982/d352cc57f2cbf4055993647e2b40281e.png?size=2048" alt="Logo Scrapbox" class="logo-large">
+        <img src="https://cdn.discordapp.com/attachments/1518081278799515708/1542461090321924106/Proyecto_nuevo_17.png?ex=6a915055&is=6a8ffed5&hm=30306adb391e96b9efa4ff5709373c01fa78a6bba4d94d4111a9fe6282bc19ed&" alt="Logo Scrapbox" class="logo-large">
         <p class="welcome-text-normal">
           Esta guía es hecha por <strong>lexyy677</strong> y se irá mejorando al paso del tiempo. Aquí encontrarás toda la información detallada sobre las sanciones, las diferentes situaciones que se pueden presentar, y muchas más cosas que iremos añadiendo conforme avance el proyecto.
         </p>
         <p class="welcome-text-warning">
-          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será estrictamente sancionado.
+          Por otra parte, ten en cuenta que cualquier intento de robar o plagiar información sobre esta guía será strictly sancionado.
         </p>
       </div>
     </div>
@@ -639,26 +639,26 @@
           Haz clic en "Copiar Plantilla" para pegar directamente el formato en Discord.
         </p>
 
-        <h3 style="color: #7dd3fc; margin-bottom: 8px; font-size: 1rem;">Plantilla de Tickets</h3>
+        <h3 style="color: #86efac; margin-bottom: 8px; font-size: 1rem;">Plantilla de Tickets</h3>
         <div class="template-box" id="temp-tickets">Nick: 
 Pruebas:</div>
         <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-tickets', this)">Copiar Plantilla</button>
 
-        <h3 style="color: #7dd3fc; margin-bottom: 8px; font-size: 1rem;">Plantilla de Baneos</h3>
+        <h3 style="color: #86efac; margin-bottom: 8px; font-size: 1rem;">Plantilla de Baneos</h3>
         <div class="template-box" id="temp-baneos">Nick: 
 Motivo: 
 Tiempo: 
 Pruebas:</div>
         <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-baneos', this)">Copiar Plantilla</button>
 
-        <h3 style="color: #7dd3fc; margin-bottom: 8px; font-size: 1rem;">Plantilla de Muteos</h3>
+        <h3 style="color: #86efac; margin-bottom: 8px; font-size: 1rem;">Plantilla de Muteos</h3>
         <div class="template-box" id="temp-muteos">Nick: 
 Motivo: 
 Tiempo: 
 Pruebas:</div>
         <button class="copy-btn" style="margin-bottom: 24px;" onclick="copyText('temp-muteos', this)">Copiar Plantilla</button>
 
-        <h3 style="color: #7dd3fc; margin-bottom: 8px; font-size: 1rem;">Plantilla de Revives</h3>
+        <h3 style="color: #86efac; margin-bottom: 8px; font-size: 1rem;">Plantilla de Revives</h3>
         <div class="template-box" id="temp-revives">Nick: 
 Motivo: 
 Pruebas:</div>
@@ -673,7 +673,7 @@ Pruebas:</div>
           A continuación se detallan los procedimientos para resolver las distintas situaciones que ocurren en la comunidad.
         </p>
 
-        <h3 style="color: #7dd3fc; margin: 20px 0 10px; font-size: 1.1rem;">📌 Procedimiento General de Atención</h3>
+        <h3 style="color: #86efac; margin: 20px 0 10px; font-size: 1.1rem;">📌 Procedimiento General de Atención</h3>
         <ol class="step-list">
           <li><strong>Saludador Inicial:</strong> Envía un saludo amable usando el formato correspondiente (por ejemplo: <code>¡Hola @Usuario! Bienvenido al soporte de Scrapbox. ¿En qué podemos ayudarte hoy?</code>).</li>
           <li><strong>Pedir la Plantilla:</strong> Si el usuario no ha puesto sus datos, reenvíale la plantilla correspondiente.</li>
@@ -681,7 +681,7 @@ Pruebas:</div>
           <li><strong>Cierre del Caso:</strong> Una vez resuelta la duda o aplicada la sanción, indícale al usuario si requiere algo más y procede a cerrar el caso.</li>
         </ol>
 
-        <h3 style="color: #7dd3fc; margin: 28px 0 12px; font-size: 1.1rem;">📂 Tipos de Situaciones</h3>
+        <h3 style="color: #86efac; margin: 28px 0 12px; font-size: 1.1rem;">📂 Tipos de Situaciones</h3>
         
         <div class="ticket-card-grid">
           <div class="ticket-card">
@@ -718,9 +718,9 @@ Pruebas:</div>
           </div>
         </div>
 
-        <div style="margin-top: 24px; padding: 14px; background: rgba(255, 59, 48, 0.1); border-left: 4px solid #ff3b30; border-radius: 4px;">
-          <p style="color: #ff3b30; font-weight: 600; font-size: 0.95rem;">⚠️ Reglas de Oro para el Staff:</p>
-          <p style="color: #e0f2fe; font-size: 0.9rem; margin-top: 4px;">
+        <div style="margin-top: 24px; padding: 14px; background: rgba(255, 77, 77, 0.1); border-left: 4px solid #ff4d4d; border-radius: 4px;">
+          <p style="color: #ff4d4d; font-weight: 600; font-size: 0.95rem;">⚠️ Reglas de Oro para el Staff:</p>
+          <p style="color: #ffffff; font-size: 0.9rem; margin-top: 4px;">
             1. Mantén la calma en todo momento, incluso si el usuario es grosero (si agrede, se le aplica mute según corresponda).<br>
             2. Nunca elimines un registro de atención sin haber dejado constancia/registro si se aplicó alguna sanción.
           </p>
